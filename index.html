@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Strategy Personality Test</title>
+    <meta name="description" content="Discover your personality type through our deep life strategy test">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Load theme immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="de" selected>Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Theme wechseln" onclick="toggleTheme()">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1 data-i18n="title">Life Strategy Test</h1>
+                <p data-i18n="subtitle">Discover your personality type</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <h2 data-i18n="welcome">Willkommen!</h2>
+                <p data-i18n="description">Dieser Test analysiert deine Lebenseinstellung, Ziele, Denkweise und emotionalen Muster. 
+                   Beantworte 10 Fragen und entdecke deinen Persönlichkeitstyp.</p>
+                <button class="btn" onclick="startTest()" data-i18n="startButton">Test starten</button>
+            </div>
+
+            <!-- Question Screen -->
+            <div class="question-container" id="questionContainer">
+                <div class="progress-text" id="progressText">Frage 1 von 10</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="question">
+                    <h3 id="questionText"></h3>
+                    <div class="answers" id="answersContainer"></div>
+                </div>
+
+                <div class="navigation">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;" data-i18n="backButton">Zurück</button>
+                    <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled data-i18n="nextButton">Weiter</button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="result-screen" id="resultScreen">
+                <div class="result-type" id="resultType"></div>
+                <div class="result-description" id="resultDescription"></div>
+                
+                <div class="result-section">
+                    <h4 data-i18n="strengths">Deine Stärken:</h4>
+                    <ul id="resultStrengths"></ul>
+                </div>
+
+                <div class="result-section">
+                    <h4 data-i18n="challenges">Herausforderungen:</h4>
+                    <ul id="resultWeaknesses"></ul>
+                </div>
+
+                <div class="result-focus" id="resultFocus"></div>
+
+                <button class="btn" onclick="restartTest()" style="margin-top: 30px;" data-i18n="retakeButton">Test wiederholen</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="impressum.html" data-i18n="impressum">Impressum</a>
+                <a href="datenschutz.html" data-i18n="privacy">Datenschutz</a>
+            </div>
+            <div class="footer-copyright">
+                <p class="copyright">© 2026 Life Strategy Test · powered by
+                <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

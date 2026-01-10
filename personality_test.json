@@ -1,0 +1,654 @@
+{
+  "meta": {
+    "title": "Life Strategy Personality Test",
+    "version": "1.0",
+    "description": "A deep personality test that analyzes mindset, goals, discipline, risk tolerance and emotional patterns."
+  },
+
+  "scales": {
+    "strategic": "Long-term thinking, planning, logic",
+    "creative": "Imagination, innovation, emotional expression",
+    "driven": "Ambition, discipline, work ethic",
+    "social": "Relationships, empathy, communication",
+    "independent": "Self-reliance, freedom, autonomy",
+    "reflective": "Depth, self-awareness, philosophy"
+  },
+
+  "questions": [
+    {
+      "id": 1,
+      "text": {
+        "en": "When you think about your future, what matters most?",
+        "de": "Wenn du an deine Zukunft denkst, was ist am wichtigsten?",
+        "fr": "Quand vous pensez à votre avenir, qu'est-ce qui compte le plus ?",
+        "es": "Cuando piensas en tu futuro, ¿qué es lo más importante?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Having a clear plan and stable success",
+            "de": "Einen klaren Plan und stabilen Erfolg haben",
+            "fr": "Avoir un plan clair et un succès stable",
+            "es": "Tener un plan claro y éxito estable"
+          },
+          "points": {"strategic": 3, "driven": 2}
+        },
+        {
+          "text": {
+            "en": "Doing something meaningful and creative",
+            "de": "Etwas Bedeutungsvolles und Kreatives tun",
+            "fr": "Faire quelque chose de significatif et créatif",
+            "es": "Hacer algo significativo y creativo"
+          },
+          "points": {"creative": 3, "reflective": 2}
+        },
+        {
+          "text": {
+            "en": "Freedom and living on my own terms",
+            "de": "Freiheit und nach meinen eigenen Regeln leben",
+            "fr": "Liberté et vivre selon mes propres termes",
+            "es": "Libertad y vivir según mis propias reglas"
+          },
+          "points": {"independent": 3}
+        },
+        {
+          "text": {
+            "en": "Strong relationships and shared experiences",
+            "de": "Starke Beziehungen und gemeinsame Erfahrungen",
+            "fr": "Relations solides et expériences partagées",
+            "es": "Relaciones fuertes y experiencias compartidas"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": {
+        "en": "How do you usually make big decisions?",
+        "de": "Wie triffst du normalerweise große Entscheidungen?",
+        "fr": "Comment prenez-vous généralement les grandes décisions ?",
+        "es": "¿Cómo tomas generalmente las decisiones importantes?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "By carefully analyzing all options",
+            "de": "Indem ich alle Optionen sorgfältig analysiere",
+            "fr": "En analysant soigneusement toutes les options",
+            "es": "Analizando cuidadosamente todas las opciones"
+          },
+          "points": {"strategic": 3}
+        },
+        {
+          "text": {
+            "en": "By following what feels right",
+            "de": "Indem ich meinem Gefühl folge",
+            "fr": "En suivant ce qui me semble juste",
+            "es": "Siguiendo lo que se siente correcto"
+          },
+          "points": {"creative": 2, "reflective": 2}
+        },
+        {
+          "text": {
+            "en": "I just go for it and adjust later",
+            "de": "Ich lege einfach los und passe später an",
+            "fr": "Je me lance et j'ajuste plus tard",
+            "es": "Simplemente lo hago y ajusto después"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "I ask people I trust",
+            "de": "Ich frage Menschen, denen ich vertraue",
+            "fr": "Je demande aux personnes en qui j'ai confiance",
+            "es": "Pregunto a personas en las que confío"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": {
+        "en": "Which describes you best?",
+        "de": "Was beschreibt dich am besten?",
+        "fr": "Qu'est-ce qui vous décrit le mieux ?",
+        "es": "¿Qué te describe mejor?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "I like structure and systems",
+            "de": "Ich mag Struktur und Systeme",
+            "fr": "J'aime la structure et les systèmes",
+            "es": "Me gusta la estructura y los sistemas"
+          },
+          "points": {"strategic": 3}
+        },
+        {
+          "text": {
+            "en": "I like ideas and possibilities",
+            "de": "Ich mag Ideen und Möglichkeiten",
+            "fr": "J'aime les idées et les possibilités",
+            "es": "Me gustan las ideas y las posibilidades"
+          },
+          "points": {"creative": 3}
+        },
+        {
+          "text": {
+            "en": "I like progress and results",
+            "de": "Ich mag Fortschritt und Ergebnisse",
+            "fr": "J'aime le progrès et les résultats",
+            "es": "Me gusta el progreso y los resultados"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "I like connection and belonging",
+            "de": "Ich mag Verbindung und Zugehörigkeit",
+            "fr": "J'aime la connexion et l'appartenance",
+            "es": "Me gusta la conexión y la pertenencia"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": {
+        "en": "What motivates you the most?",
+        "de": "Was motiviert dich am meisten?",
+        "fr": "Qu'est-ce qui vous motive le plus ?",
+        "es": "¿Qué te motiva más?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Achieving something big",
+            "de": "Etwas Großes erreichen",
+            "fr": "Réaliser quelque chose de grand",
+            "es": "Lograr algo grande"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "Understanding myself and the world",
+            "de": "Mich selbst und die Welt verstehen",
+            "fr": "Me comprendre moi-même et le monde",
+            "es": "Entenderme a mí mismo y al mundo"
+          },
+          "points": {"reflective": 3}
+        },
+        {
+          "text": {
+            "en": "Being free",
+            "de": "Frei sein",
+            "fr": "Être libre",
+            "es": "Ser libre"
+          },
+          "points": {"independent": 3}
+        },
+        {
+          "text": {
+            "en": "Being appreciated",
+            "de": "Wertgeschätzt werden",
+            "fr": "Être apprécié",
+            "es": "Ser apreciado"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": {
+        "en": "How do you react to failure?",
+        "de": "Wie reagierst du auf Misserfolg?",
+        "fr": "Comment réagissez-vous à l'échec ?",
+        "es": "¿Cómo reaccionas al fracaso?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "I analyze what went wrong",
+            "de": "Ich analysiere, was schief gelaufen ist",
+            "fr": "J'analyse ce qui s'est mal passé",
+            "es": "Analizo qué salió mal"
+          },
+          "points": {"strategic": 3}
+        },
+        {
+          "text": {
+            "en": "I feel it deeply and rethink my path",
+            "de": "Ich fühle es tief und überdenke meinen Weg",
+            "fr": "Je le ressens profondément et repense mon chemin",
+            "es": "Lo siento profundamente y reconsidero mi camino"
+          },
+          "points": {"reflective": 3}
+        },
+        {
+          "text": {
+            "en": "I push harder",
+            "de": "Ich gebe noch mehr Gas",
+            "fr": "Je pousse plus fort",
+            "es": "Me esfuerzo más"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "I seek support",
+            "de": "Ich suche Unterstützung",
+            "fr": "Je cherche du soutien",
+            "es": "Busco apoyo"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": {
+        "en": "Which life feels most attractive to you?",
+        "de": "Welches Leben fühlt sich für dich am attraktivsten an?",
+        "fr": "Quelle vie vous semble la plus attrayante ?",
+        "es": "¿Qué vida te parece más atractiva?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Running something successful",
+            "de": "Etwas Erfolgreiches leiten",
+            "fr": "Diriger quelque chose de réussi",
+            "es": "Dirigir algo exitoso"
+          },
+          "points": {"driven": 3, "strategic": 2}
+        },
+        {
+          "text": {
+            "en": "Creating art or ideas",
+            "de": "Kunst oder Ideen erschaffen",
+            "fr": "Créer de l'art ou des idées",
+            "es": "Crear arte o ideas"
+          },
+          "points": {"creative": 3}
+        },
+        {
+          "text": {
+            "en": "Traveling and being free",
+            "de": "Reisen und frei sein",
+            "fr": "Voyager et être libre",
+            "es": "Viajar y ser libre"
+          },
+          "points": {"independent": 3}
+        },
+        {
+          "text": {
+            "en": "Having deep relationships",
+            "de": "Tiefe Beziehungen haben",
+            "fr": "Avoir des relations profondes",
+            "es": "Tener relaciones profundas"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": {
+        "en": "How do you see rules?",
+        "de": "Wie siehst du Regeln?",
+        "fr": "Comment voyez-vous les règles ?",
+        "es": "¿Cómo ves las reglas?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "They keep things working",
+            "de": "Sie halten Dinge am Laufen",
+            "fr": "Elles font fonctionner les choses",
+            "es": "Mantienen las cosas funcionando"
+          },
+          "points": {"strategic": 3}
+        },
+        {
+          "text": {
+            "en": "They limit expression",
+            "de": "Sie begrenzen Ausdruck",
+            "fr": "Elles limitent l'expression",
+            "es": "Limitan la expresión"
+          },
+          "points": {"creative": 3}
+        },
+        {
+          "text": {
+            "en": "They exist to be beaten",
+            "de": "Sie existieren, um gebrochen zu werden",
+            "fr": "Elles existent pour être battues",
+            "es": "Existen para ser superadas"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "They protect people",
+            "de": "Sie schützen Menschen",
+            "fr": "Elles protègent les gens",
+            "es": "Protegen a las personas"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": {
+        "en": "When alone, what do you do?",
+        "de": "Was machst du, wenn du alleine bist?",
+        "fr": "Que faites-vous quand vous êtes seul ?",
+        "es": "¿Qué haces cuando estás solo?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Plan or think about goals",
+            "de": "Plane oder denke über Ziele nach",
+            "fr": "Planifier ou réfléchir aux objectifs",
+            "es": "Planear o pensar en objetivos"
+          },
+          "points": {"strategic": 3}
+        },
+        {
+          "text": {
+            "en": "Daydream or create",
+            "de": "Tagträumen oder kreativ sein",
+            "fr": "Rêvasser ou créer",
+            "es": "Soñar despierto o crear"
+          },
+          "points": {"creative": 3}
+        },
+        {
+          "text": {
+            "en": "Work or train",
+            "de": "Arbeiten oder trainieren",
+            "fr": "Travailler ou s'entraîner",
+            "es": "Trabajar o entrenar"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "Reflect about life",
+            "de": "Über das Leben nachdenken",
+            "fr": "Réfléchir à la vie",
+            "es": "Reflexionar sobre la vida"
+          },
+          "points": {"reflective": 3}
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": {
+        "en": "What annoys you most?",
+        "de": "Was nervt dich am meisten?",
+        "fr": "Qu'est-ce qui vous agace le plus ?",
+        "es": "¿Qué te molesta más?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Chaos and inefficiency",
+            "de": "Chaos und Ineffizienz",
+            "fr": "Chaos et inefficacité",
+            "es": "Caos e ineficiencia"
+          },
+          "points": {"strategic": 3}
+        },
+        {
+          "text": {
+            "en": "Being controlled",
+            "de": "Kontrolliert werden",
+            "fr": "Être contrôlé",
+            "es": "Ser controlado"
+          },
+          "points": {"independent": 3}
+        },
+        {
+          "text": {
+            "en": "Wasted potential",
+            "de": "Verschwendetes Potenzial",
+            "fr": "Potentiel gaspillé",
+            "es": "Potencial desperdiciado"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "Cold or distant people",
+            "de": "Kalte oder distanzierte Menschen",
+            "fr": "Personnes froides ou distantes",
+            "es": "Personas frías o distantes"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": {
+        "en": "What are you most proud of?",
+        "de": "Worauf bist du am meisten stolz?",
+        "fr": "De quoi êtes-vous le plus fier ?",
+        "es": "¿De qué estás más orgulloso?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "My intelligence",
+            "de": "Meine Intelligenz",
+            "fr": "Mon intelligence",
+            "es": "Mi inteligencia"
+          },
+          "points": {"strategic": 2, "reflective": 1}
+        },
+        {
+          "text": {
+            "en": "My creativity",
+            "de": "Meine Kreativität",
+            "fr": "Ma créativité",
+            "es": "Mi creatividad"
+          },
+          "points": {"creative": 3}
+        },
+        {
+          "text": {
+            "en": "My discipline",
+            "de": "Meine Disziplin",
+            "fr": "Ma discipline",
+            "es": "Mi disciplina"
+          },
+          "points": {"driven": 3}
+        },
+        {
+          "text": {
+            "en": "My kindness",
+            "de": "Meine Freundlichkeit",
+            "fr": "Ma gentillesse",
+            "es": "Mi amabilidad"
+          },
+          "points": {"social": 3}
+        }
+      ]
+    }
+  ],
+
+  "types": {
+    "The Strategist": {
+      "dominant": "strategic",
+      "description": {
+        "en": "You are a long-term thinker. You like systems, plans and logic. You want to build something stable and powerful.",
+        "de": "Du bist ein langfristiger Denker. Du magst Systeme, Pläne und Logik. Du willst etwas Stabiles und Mächtiges aufbauen.",
+        "fr": "Vous êtes un penseur à long terme. Vous aimez les systèmes, les plans et la logique. Vous voulez construire quelque chose de stable et puissant.",
+        "es": "Eres un pensador a largo plazo. Te gustan los sistemas, los planes y la lógica. Quieres construir algo estable y poderoso."
+      },
+      "strengths": {
+        "en": ["Planning", "Problem-solving", "Discipline"],
+        "de": ["Planung", "Problemlösung", "Disziplin"],
+        "fr": ["Planification", "Résolution de problèmes", "Discipline"],
+        "es": ["Planificación", "Resolución de problemas", "Disciplina"]
+      },
+      "weaknesses": {
+        "en": ["Overthinking", "Rigidity", "Emotional distance"],
+        "de": ["Überdenken", "Starrheit", "Emotionale Distanz"],
+        "fr": ["Surréflexion", "Rigidité", "Distance émotionnelle"],
+        "es": ["Pensar demasiado", "Rigidez", "Distancia emocional"]
+      },
+      "lifeFocus": {
+        "en": "Building security and success through structure.",
+        "de": "Sicherheit und Erfolg durch Struktur aufbauen.",
+        "fr": "Construire la sécurité et le succès par la structure.",
+        "es": "Construir seguridad y éxito a través de la estructura."
+      }
+    },
+    "The Dreamer": {
+      "dominant": "creative",
+      "description": {
+        "en": "You live in ideas, imagination and emotions. You want meaning, not just money.",
+        "de": "Du lebst in Ideen, Fantasie und Emotionen. Du willst Bedeutung, nicht nur Geld.",
+        "fr": "Vous vivez dans les idées, l'imagination et les émotions. Vous voulez du sens, pas seulement de l'argent.",
+        "es": "Vives en ideas, imaginación y emociones. Quieres significado, no solo dinero."
+      },
+      "strengths": {
+        "en": ["Creativity", "Vision", "Empathy"],
+        "de": ["Kreativität", "Vision", "Empathie"],
+        "fr": ["Créativité", "Vision", "Empathie"],
+        "es": ["Creatividad", "Visión", "Empatía"]
+      },
+      "weaknesses": {
+        "en": ["Lack of structure", "Over-sensitivity", "Distraction"],
+        "de": ["Mangel an Struktur", "Überempfindlichkeit", "Ablenkung"],
+        "fr": ["Manque de structure", "Hypersensibilité", "Distraction"],
+        "es": ["Falta de estructura", "Hipersensibilidad", "Distracción"]
+      },
+      "lifeFocus": {
+        "en": "Expressing yourself and finding purpose.",
+        "de": "Sich selbst ausdrücken und Sinn finden.",
+        "fr": "S'exprimer et trouver un but.",
+        "es": "Expresarte y encontrar propósito."
+      }
+    },
+    "The Warrior": {
+      "dominant": "driven",
+      "description": {
+        "en": "You are ambitious, competitive and determined. You want to win.",
+        "de": "Du bist ehrgeizig, wettbewerbsorientiert und entschlossen. Du willst gewinnen.",
+        "fr": "Vous êtes ambitieux, compétitif et déterminé. Vous voulez gagner.",
+        "es": "Eres ambicioso, competitivo y determinado. Quieres ganar."
+      },
+      "strengths": {
+        "en": ["Discipline", "Resilience", "Leadership"],
+        "de": ["Disziplin", "Widerstandsfähigkeit", "Führung"],
+        "fr": ["Discipline", "Résilience", "Leadership"],
+        "es": ["Disciplina", "Resiliencia", "Liderazgo"]
+      },
+      "weaknesses": {
+        "en": ["Burnout", "Impatience", "Workaholism"],
+        "de": ["Burnout", "Ungeduld", "Workaholism"],
+        "fr": ["Épuisement", "Impatience", "Workaholisme"],
+        "es": ["Agotamiento", "Impaciencia", "Adicción al trabajo"]
+      },
+      "lifeFocus": {
+        "en": "Achieving greatness through effort.",
+        "de": "Größe durch Anstrengung erreichen.",
+        "fr": "Atteindre la grandeur par l'effort.",
+        "es": "Lograr grandeza a través del esfuerzo."
+      }
+    },
+    "The Connector": {
+      "dominant": "social",
+      "description": {
+        "en": "You thrive on relationships and emotions. You want to feel close to others.",
+        "de": "Du blühst in Beziehungen und Emotionen auf. Du willst anderen nahe sein.",
+        "fr": "Vous vous épanouissez dans les relations et les émotions. Vous voulez vous sentir proche des autres.",
+        "es": "Prosperas en relaciones y emociones. Quieres sentirte cerca de los demás."
+      },
+      "strengths": {
+        "en": ["Communication", "Empathy", "Loyalty"],
+        "de": ["Kommunikation", "Empathie", "Loyalität"],
+        "fr": ["Communication", "Empathie", "Loyauté"],
+        "es": ["Comunicación", "Empatía", "Lealtad"]
+      },
+      "weaknesses": {
+        "en": ["Dependence", "Fear of conflict"],
+        "de": ["Abhängigkeit", "Angst vor Konflikten"],
+        "fr": ["Dépendance", "Peur du conflit"],
+        "es": ["Dependencia", "Miedo al conflicto"]
+      },
+      "lifeFocus": {
+        "en": "Building strong bonds.",
+        "de": "Starke Bindungen aufbauen.",
+        "fr": "Construire des liens solides.",
+        "es": "Construir lazos fuertes."
+      }
+    },
+    "The Lone Wolf": {
+      "dominant": "independent",
+      "description": {
+        "en": "You value freedom above everything. You want to live on your own terms.",
+        "de": "Du schätzt Freiheit über alles. Du willst nach deinen eigenen Regeln leben.",
+        "fr": "Vous valorisez la liberté par-dessus tout. Vous voulez vivre selon vos propres termes.",
+        "es": "Valoras la libertad por encima de todo. Quieres vivir según tus propias reglas."
+      },
+      "strengths": {
+        "en": ["Self-reliance", "Courage", "Originality"],
+        "de": ["Selbstständigkeit", "Mut", "Originalität"],
+        "fr": ["Autonomie", "Courage", "Originalité"],
+        "es": ["Autosuficiencia", "Coraje", "Originalidad"]
+      },
+      "weaknesses": {
+        "en": ["Isolation", "Stubbornness"],
+        "de": ["Isolation", "Sturheit"],
+        "fr": ["Isolement", "Obstination"],
+        "es": ["Aislamiento", "Terquedad"]
+      },
+      "lifeFocus": {
+        "en": "Living freely and authentically.",
+        "de": "Frei und authentisch leben.",
+        "fr": "Vivre librement et authentiquement.",
+        "es": "Vivir libre y auténticamente."
+      }
+    },
+    "The Philosopher": {
+      "dominant": "reflective",
+      "description": {
+        "en": "You think deeply about life, emotions and meaning.",
+        "de": "Du denkst tief über Leben, Emotionen und Bedeutung nach.",
+        "fr": "Vous réfléchissez profondément à la vie, aux émotions et au sens.",
+        "es": "Piensas profundamente sobre la vida, las emociones y el significado."
+      },
+      "strengths": {
+        "en": ["Insight", "Self-awareness", "Depth"],
+        "de": ["Einsicht", "Selbstbewusstsein", "Tiefe"],
+        "fr": ["Perspicacité", "Conscience de soi", "Profondeur"],
+        "es": ["Perspicacia", "Autoconciencia", "Profundidad"]
+      },
+      "weaknesses": {
+        "en": ["Overthinking", "Melancholy"],
+        "de": ["Überdenken", "Melancholie"],
+        "fr": ["Surréflexion", "Mélancolie"],
+        "es": ["Pensar demasiado", "Melancolía"]
+      },
+      "lifeFocus": {
+        "en": "Understanding yourself and the world.",
+        "de": "Dich selbst und die Welt verstehen.",
+        "fr": "Vous comprendre vous-même et le monde.",
+        "es": "Entenderte a ti mismo y al mundo."
+      }
+    }
+  }
+}
