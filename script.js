@@ -30,7 +30,21 @@ const translations = {
     "impressum": "Imprint",
     "privacy": "Privacy",
     "copyright": "© 2026 Life Strategy Test · powered by",
-    "language": "Language"
+    "language": "Language",
+    "about": "About Traitora",
+    "how-it-works-title": "How it works",
+    "instruction-1": "Answer 10 questions about your life attitude",
+    "instruction-2": "Choose the answer that fits you best",
+    "instruction-3": "Get your individual personality type",
+    "instruction-4": "Discover your strengths and development potential",
+    "about-title": "About Traitora",
+    "about-description": "<strong>Traitora</strong> is a free <strong>personality test</strong> that helps you discover your <strong>Life Strategy Type</strong>. Our test analyzes your life attitude, goals, mindset and emotional patterns.",
+    "about-features-title": "Features:",
+    "about-feature-1": "<strong>10 Questions:</strong> Short and precise for quick results",
+    "about-feature-2": "<strong>4 Languages:</strong> German, English, French, Spanish",
+    "about-feature-3": "<strong>Detailed Analysis:</strong> Strengths and challenges",
+    "about-feature-4": "<strong>Free:</strong> No registration required",
+    "about-challenge": "Are you ready to understand your <strong>personality</strong> better? Start the test now and discover your unique <strong>Life Strategy Type</strong>!"
   },
   "de": {
     "title": "Life Strategy Test",
@@ -49,7 +63,21 @@ const translations = {
     "impressum": "Impressum",
     "privacy": "Datenschutz",
     "copyright": "© 2026 Life Strategy Test · unterstützt von",
-    "language": "Sprache"
+    "language": "Sprache",
+    "about": "Über Traitora",
+    "how-it-works-title": "So funktioniert's",
+    "instruction-1": "Beantworte 10 Fragen über deine Lebenseinstellung",
+    "instruction-2": "Wähle die Antwort, die am besten zu dir passt",
+    "instruction-3": "Erhalte deinen individuellen Persönlichkeitstyp",
+    "instruction-4": "Entdecke deine Stärken und Entwicklungspotenziale",
+    "about-title": "Über Traitora",
+    "about-description": "<strong>Traitora</strong> ist ein kostenloser <strong>Persönlichkeitstest</strong>, der dir hilft, deinen <strong>Life Strategy Typ</strong> zu entdecken. Unser Test analysiert deine Lebenseinstellung, Ziele, Denkweise und emotionalen Muster.",
+    "about-features-title": "Features:",
+    "about-feature-1": "<strong>10 Fragen:</strong> Kurz und präzise für schnelle Ergebnisse",
+    "about-feature-2": "<strong>4 Sprachen:</strong> Deutsch, Englisch, Französisch, Spanisch",
+    "about-feature-3": "<strong>Detaillierte Analyse:</strong> Stärken und Herausforderungen",
+    "about-feature-4": "<strong>Kostenlos:</strong> Keine Anmeldung erforderlich",
+    "about-challenge": "Bist du bereit, deine <strong>Persönlichkeit</strong> besser zu verstehen? Starte jetzt den Test und entdecke deinen einzigartigen <strong>Life Strategy Typ</strong>!"
   },
   "fr": {
     "title": "Test de Stratégie de Vie",
@@ -68,7 +96,21 @@ const translations = {
     "impressum": "Mentions légales",
     "privacy": "Confidentialité",
     "copyright": "© 2026 Test de Stratégie de Vie · propulsé par",
-    "language": "Langue"
+    "language": "Langue",
+    "about": "À propos de Traitora",
+    "how-it-works-title": "Comment ça marche",
+    "instruction-1": "Répondez à 10 questions sur votre attitude face à la vie",
+    "instruction-2": "Choisissez la réponse qui vous correspond le mieux",
+    "instruction-3": "Obtenez votre type de personnalité individuel",
+    "instruction-4": "Découvrez vos forces et votre potentiel de développement",
+    "about-title": "À propos de Traitora",
+    "about-description": "<strong>Traitora</strong> est un <strong>test de personnalité</strong> gratuit qui vous aide à découvrir votre <strong>Type de Stratégie de Vie</strong>. Notre test analyse votre attitude face à la vie, vos objectifs, votre état d'esprit et vos schémas émotionnels.",
+    "about-features-title": "Caractéristiques :",
+    "about-feature-1": "<strong>10 Questions :</strong> Court et précis pour des résultats rapides",
+    "about-feature-2": "<strong>4 Langues :</strong> Allemand, Anglais, Français, Espagnol",
+    "about-feature-3": "<strong>Analyse Détaillée :</strong> Forces et défis",
+    "about-feature-4": "<strong>Gratuit :</strong> Aucune inscription requise",
+    "about-challenge": "Êtes-vous prêt à mieux comprendre votre <strong>personnalité</strong> ? Commencez le test maintenant et découvrez votre <strong>Type de Stratégie de Vie</strong> unique !"
   },
   "es": {
     "title": "Test de Estrategia de Vida",
@@ -87,7 +129,21 @@ const translations = {
     "impressum": "Aviso legal",
     "privacy": "Privacidad",
     "copyright": "© 2026 Test de Estrategia de Vida · desarrollado por",
-    "language": "Idioma"
+    "language": "Idioma",
+    "about": "Acerca de Traitora",
+    "how-it-works-title": "Cómo funciona",
+    "instruction-1": "Responde 10 preguntas sobre tu actitud ante la vida",
+    "instruction-2": "Elige la respuesta que mejor te represente",
+    "instruction-3": "Obtén tu tipo de personalidad individual",
+    "instruction-4": "Descubre tus fortalezas y potencial de desarrollo",
+    "about-title": "Acerca de Traitora",
+    "about-description": "<strong>Traitora</strong> es un <strong>test de personalidad</strong> gratuito que te ayuda a descubrir tu <strong>Tipo de Estrategia de Vida</strong>. Nuestro test analiza tu actitud ante la vida, objetivos, mentalidad y patrones emocionales.",
+    "about-features-title": "Características:",
+    "about-feature-1": "<strong>10 Preguntas:</strong> Corto y preciso para resultados rápidos",
+    "about-feature-2": "<strong>4 Idiomas:</strong> Alemán, Inglés, Francés, Español",
+    "about-feature-3": "<strong>Análisis Detallado:</strong> Fortalezas y desafíos",
+    "about-feature-4": "<strong>Gratuito:</strong> No requiere registro",
+    "about-challenge": "¿Estás listo para entender mejor tu <strong>personalidad</strong>? ¡Comienza el test ahora y descubre tu <strong>Tipo de Estrategia de Vida</strong> único!"
   }
 };
 

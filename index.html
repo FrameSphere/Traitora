@@ -126,42 +126,74 @@
             </div>
         </div>
 
-        <!-- How to Use Section (Collapsible) -->
-        <section class="how-to-use">
-            <button class="how-to-use-toggle" onclick="toggleHowToUse()" aria-expanded="false">
-                <h2 class="section-title" data-i18n="how-it-works-title">So funktioniert's</h2>
-                <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </button>
-            <div class="instructions collapsed">
-                <div class="instruction-item">
-                    <span class="instruction-number">1</span>
-                    <p data-i18n="instruction-1">Beantworte 10 Fragen über deine Lebenseinstellung</p>
-                </div>
-                <div class="instruction-item">
-                    <span class="instruction-number">2</span>
-                    <p data-i18n="instruction-2">Wähle die Antwort, die am besten zu dir passt</p>
-                </div>
-                <div class="instruction-item">
-                    <span class="instruction-number">3</span>
-                    <p data-i18n="instruction-3">Erhalte deinen individuellen Persönlichkeitstyp</p>
-                </div>
-                <div class="instruction-item">
-                    <span class="instruction-number">4</span>
-                    <p data-i18n="instruction-4">Entdecke deine Stärken und Entwicklungspotenziale</p>
-                </div>
-            </div>
-        </section>
-
         <div class="footer">
             <div class="footer-links">
+                <a href="#" id="aboutLink" onclick="openAboutModal(); return false;" data-i18n="about">About Traitora</a>
+                <span class="footer-separator">·</span>
                 <a href="impressum.html" data-i18n="impressum">Impressum</a>
+                <span class="footer-separator">·</span>
                 <a href="datenschutz.html" data-i18n="privacy">Datenschutz</a>
             </div>
             <div class="footer-copyright">
                 <p class="copyright">© Traitora's 2026 Life Strategy Test · powered by
                 <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to Use Section (Collapsible) - OUTSIDE CONTAINER -->
+    <section class="how-to-use">
+        <button class="how-to-use-toggle" onclick="toggleHowToUse()" aria-expanded="false">
+            <h2 class="section-title" data-i18n="how-it-works-title">So funktioniert's</h2>
+            <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+        <div class="instructions collapsed">
+            <div class="instruction-item">
+                <span class="instruction-number">1</span>
+                <p data-i18n="instruction-1">Beantworte 10 Fragen über deine Lebenseinstellung</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">2</span>
+                <p data-i18n="instruction-2">Wähle die Antwort, die am besten zu dir passt</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">3</span>
+                <p data-i18n="instruction-3">Erhalte deinen individuellen Persönlichkeitstyp</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">4</span>
+                <p data-i18n="instruction-4">Entdecke deine Stärken und Entwicklungspotenziale</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeAboutModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAboutModal()" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="modal-title" data-i18n="about-title">Über Traitora</h2>
+            <div class="about-content">
+                <p data-i18n="about-description">
+                    <strong>Traitora</strong> ist ein kostenloser <strong>Persönlichkeitstest</strong>, der dir hilft, deinen <strong>Life Strategy Typ</strong> zu entdecken. Unser Test analysiert deine Lebenseinstellung, Ziele, Denkweise und emotionalen Muster.
+                </p>
+                <h3 data-i18n="about-features-title">Features:</h3>
+                <ul class="about-list">
+                    <li data-i18n="about-feature-1"><strong>10 Fragen:</strong> Kurz und präzise für schnelle Ergebnisse</li>
+                    <li data-i18n="about-feature-2"><strong>4 Sprachen:</strong> Deutsch, Englisch, Französisch, Spanisch</li>
+                    <li data-i18n="about-feature-3"><strong>Detaillierte Analyse:</strong> Stärken und Herausforderungen</li>
+                    <li data-i18n="about-feature-4"><strong>Kostenlos:</strong> Keine Anmeldung erforderlich</li>
+                </ul>
+                <p data-i18n="about-challenge">
+                    Bist du bereit, deine <strong>Persönlichkeit</strong> besser zu verstehen? Starte jetzt den Test und entdecke deinen einzigartigen <strong>Life Strategy Typ</strong>!
+                </p>
             </div>
         </div>
     </div>
@@ -175,6 +207,14 @@
             
             instructions.classList.toggle('collapsed');
             toggle.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        function openAboutModal() {
+            document.getElementById('aboutModal').classList.remove('hidden');
+        }
+        
+        function closeAboutModal() {
+            document.getElementById('aboutModal').classList.add('hidden');
         }
     </script>
 </body>
