@@ -1,0 +1,27 @@
+# ===============================
+# Cloudflare Pages Redirects
+# Personality Test
+# ===============================
+
+# ---- Static files (serve directly)
+/style.css               /style.css              200
+/script.js               /script.js              200
+/personality_test.json   /personality_test.json  200
+/translations.json       /translations.json      200
+
+# ---- Ads.txt (important for AdSense)
+/ads.txt      /ads.txt           200
+
+# ---- Robots & Sitemap
+/robots.txt   /robots.txt        200
+/sitemap.xml  /sitemap.xml       200
+
+# ---- Legal Pages
+/impressum.html     /impressum.html      200
+/datenschutz.html   /datenschutz.html    200
+
+# ---- Google Verification
+/google7ef57c38ed213579.html   /google7ef57c38ed213579.html   200
+
+# ---- SPA Fallback (ALWAYS LAST RULE!)
+/*            /index.html        200
