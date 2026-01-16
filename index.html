@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Strategy Personality Test</title>
-    <meta name="description" content="Discover your personality type through our deep life strategy test">
+    <title>Traitora - Persönlichkeitstest | Entdecke deinen Life Strategy Typ</title>
+    <meta name="description" content="Kostenloser Persönlichkeitstest zur Entdeckung deines Life Strategy Typs. Analysiere deine Lebenseinstellung, Ziele und emotionalen Muster in 10 Fragen.">
+    <meta name="keywords" content="Persönlichkeitstest, Personality Test, Life Strategy Test, Persönlichkeitstyp, Selbstfindung, Psychologie Test, Charaktertest, Traitora">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Traitora - Persönlichkeitstest | Entdecke deinen Typ">
+    <meta property="og:description" content="Kostenloser Persönlichkeitstest zur Entdeckung deines Life Strategy Typs in 10 Fragen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://traitora.pages.dev/">
+    <meta property="og:site_name" content="Traitora">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Traitora - Persönlichkeitstest">
+    <meta name="twitter:description" content="Entdecke deinen Life Strategy Typ in 10 Fragen.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://traitora.pages.dev/">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
@@ -105,6 +126,34 @@
             </div>
         </div>
 
+        <!-- How to Use Section (Collapsible) -->
+        <section class="how-to-use">
+            <button class="how-to-use-toggle" onclick="toggleHowToUse()" aria-expanded="false">
+                <h2 class="section-title" data-i18n="how-it-works-title">So funktioniert's</h2>
+                <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="instructions collapsed">
+                <div class="instruction-item">
+                    <span class="instruction-number">1</span>
+                    <p data-i18n="instruction-1">Beantworte 10 Fragen über deine Lebenseinstellung</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">2</span>
+                    <p data-i18n="instruction-2">Wähle die Antwort, die am besten zu dir passt</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">3</span>
+                    <p data-i18n="instruction-3">Erhalte deinen individuellen Persönlichkeitstyp</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">4</span>
+                    <p data-i18n="instruction-4">Entdecke deine Stärken und Entwicklungspotenziale</p>
+                </div>
+            </div>
+        </section>
+
         <div class="footer">
             <div class="footer-links">
                 <a href="impressum.html" data-i18n="impressum">Impressum</a>
@@ -118,5 +167,15 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        function toggleHowToUse() {
+            const instructions = document.querySelector('.how-to-use .instructions');
+            const toggle = document.querySelector('.how-to-use-toggle');
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            instructions.classList.toggle('collapsed');
+            toggle.setAttribute('aria-expanded', !isExpanded);
+        }
+    </script>
 </body>
 </html>

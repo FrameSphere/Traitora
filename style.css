@@ -456,6 +456,108 @@ body {
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
+/* ========================================
+   How to Use Section - COLLAPSIBLE
+   ======================================== */
+.how-to-use {
+    max-width: 900px;
+    margin: 3rem auto 2rem;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.how-to-use-toggle {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.how-to-use-toggle:hover {
+    background: var(--bg-secondary);
+}
+
+.how-to-use-toggle .section-title {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+    color: var(--text-primary);
+}
+
+.how-to-use-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.how-to-use .instructions {
+    max-height: 500px;
+    opacity: 1;
+    padding: 0 24px 24px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.how-to-use .instructions.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 24px;
+}
+
+.instruction-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.instruction-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.instruction-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.instruction-item p {
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 .footer {
     background: var(--bg-secondary);
     padding: 30px 40px;
@@ -641,6 +743,14 @@ body {
         font-size: 1.1em;
         margin-top: 25px;
         border-radius: 14px;
+    }
+
+    .how-to-use {
+        margin: 2rem 1rem;
+    }
+    
+    .how-to-use .instructions {
+        grid-template-columns: 1fr;
     }
 
     .footer {
