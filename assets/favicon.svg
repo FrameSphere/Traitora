@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <circle cx="50" cy="50" r="48" fill="#1e293b"/>
+  
+  <!-- Head outline with gradient segments representing different personality types -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Head shape -->
+  <ellipse cx="50" cy="45" rx="28" ry="32" fill="url(#grad1)" opacity="0.9"/>
+  
+  <!-- Brain symbol inside head -->
+  <g transform="translate(50, 45)">
+    <!-- Left hemisphere -->
+    <path d="M -12,-8 Q -18,-8 -18,-2 Q -18,4 -12,8 Q -8,10 -4,8 Q 0,6 0,0" 
+          fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Right hemisphere -->
+    <path d="M 12,-8 Q 18,-8 18,-2 Q 18,4 12,8 Q 8,10 4,8 Q 0,6 0,0" 
+          fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Brain details -->
+    <path d="M -8,-2 Q -6,0 -8,2" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 8,-2 Q 6,0 8,2" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Shoulders/body hint -->
+  <ellipse cx="50" cy="78" rx="32" ry="12" fill="url(#grad1)" opacity="0.7"/>
+  
+  <!-- Accent circle border -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#6366f1" stroke-width="2.5"/>
+</svg>
