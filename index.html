@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traitora - Adaptiver Persönlichkeitstest | Wissenschaftlich fundierte Trait-Analyse</title>
+    <meta name="description" content="Wissenschaftlich fundierter adaptiver Persönlichkeitstest. Entdecke deine dominanten Traits durch intelligente Fragenauswahl mit IRT-Algorithmus.">
+    <meta name="keywords" content="Persönlichkeitstest, Adaptive Testing, Trait-Analyse, IRT, Psychologie, Big Five, Persönlichkeitstyp, Traitora">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/favicon.svg">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Traitora - Adaptiver Persönlichkeitstest">
+    <meta property="og:description" content="Wissenschaftlich fundierter adaptiver Persönlichkeitstest mit intelligenter Fragenauswahl.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://traitora.pages.dev/">
+    <meta property="og:site_name" content="Traitora">
+    <meta property="og:image" content="https://traitora.pages.dev/assets/favicon.svg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Traitora - Adaptiver Persönlichkeitstest">
+    <meta name="twitter:description" content="Entdecke deine Persönlichkeit durch adaptive Trait-Analyse.">
+    <meta name="twitter:image" content="https://traitora.pages.dev/assets/favicon.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://traitora.pages.dev/">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Traitora",
+      "alternateName": "Adaptiver Persönlichkeitstest",
+      "url": "https://traitora.pages.dev/",
+      "description": "Wissenschaftlich fundierter adaptiver Persönlichkeitstest mit intelligenter Fragenauswahl und IRT-Algorithmus.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "image": "https://traitora.pages.dev/assets/favicon.svg",
+      "inLanguage": ["de", "en", "fr", "es"]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!--Google AdSense-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005"
+    crossorigin="anonymous"></script>
+
+    <script>
+        // Load theme immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="de" selected>Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Theme wechseln" onclick="toggleTheme()">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1 data-i18n="title">Traitora</h1>
+                <p data-i18n="subtitle">Adaptiver Persönlichkeitstest</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <h2 data-i18n="welcome">Willkommen bei Traitora!</h2>
+                <p data-i18n="description">
+                    Traitora nutzt einen <strong>adaptiven Algorithmus</strong>, der die Fragen intelligent an deine Antworten anpasst. 
+                    Basierend auf Item Response Theory (IRT) erhältst du ein präzises Persönlichkeitsprofil 
+                    mit minimalem Zeitaufwand.
+                </p>
+                <div class="feature-highlights">
+                    <div class="feature">
+                        <span class="feature-icon">🧠</span>
+                        <span data-i18n="feature-adaptive">Adaptive Fragenauswahl</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span data-i18n="feature-efficient">Effiziente Messung</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎯</span>
+                        <span data-i18n="feature-precise">Präzise Ergebnisse</span>
+                    </div>
+                </div>
+                <button class="btn" onclick="startTest()" data-i18n="startButton">Test starten</button>
+            </div>
+
+            <!-- Question Screen -->
+            <div class="question-container" id="questionContainer">
+                <div class="progress-info">
+                    <div class="progress-text" id="progressText">Frage 1</div>
+                    <div class="confidence-indicator">
+                        <span data-i18n="confidence">Profil-Schärfe:</span>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill"></div>
+                        </div>
+                        <span id="confidencePercent">0%</span>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3 id="questionText"></h3>
+                    <div class="answers" id="answersContainer"></div>
+                </div>
+
+                <div class="navigation">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;" data-i18n="backButton">Zurück</button>
+                    <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled data-i18n="nextButton">Weiter</button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="result-screen" id="resultScreen">
+                <h2 class="result-title" data-i18n="your-profile">Dein Persönlichkeitsprofil</h2>
+                
+                <div class="trait-profiles" id="traitProfiles"></div>
+
+                <div class="result-section profile-description">
+                    <h4 data-i18n="interpretation">Interpretation:</h4>
+                    <p id="profileInterpretation"></p>
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn" onclick="restartTest()" data-i18n="retakeButton">Test wiederholen</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#" id="aboutLink" onclick="openAboutModal(); return false;" data-i18n="about">Über Traitora</a>
+                <span class="footer-separator">·</span>
+                <a href="impressum.html" data-i18n="impressum">Impressum</a>
+                <span class="footer-separator">·</span>
+                <a href="datenschutz.html" data-i18n="privacy">Datenschutz</a>
+            </div>
+            <div class="footer-copyright">
+                <p class="copyright">© Traitora 2026 · powered by
+                <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How it Works Section -->
+    <section class="how-to-use">
+        <button class="how-to-use-toggle" onclick="toggleHowToUse()" aria-expanded="false">
+            <h2 class="section-title" data-i18n="how-it-works-title">Wie funktioniert der adaptive Test?</h2>
+            <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+        <div class="instructions collapsed">
+            <div class="instruction-item">
+                <span class="instruction-number">1</span>
+                <p data-i18n="instruction-1">Der Test startet mit breiten Screening-Fragen</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">2</span>
+                <p data-i18n="instruction-2">Basierend auf deinen Antworten wählt der Algorithmus gezielt die nächste Frage</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">3</span>
+                <p data-i18n="instruction-3">Die Profil-Schärfe zeigt dir, wie präzise dein Ergebnis bereits ist</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">4</span>
+                <p data-i18n="instruction-4">Der Test endet automatisch, wenn ausreichende Präzision erreicht ist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeAboutModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAboutModal()" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="modal-title" data-i18n="about-title">Über Traitora</h2>
+            <div class="about-content">
+                <p data-i18n="about-description">
+                    <strong>Traitora</strong> ist ein wissenschaftlich fundierter <strong>adaptiver Persönlichkeitstest</strong>, 
+                    der auf der <strong>Item Response Theory (IRT)</strong> basiert. Anders als statische Tests passt sich 
+                    Traitora intelligent an deine Antworten an und wählt gezielt die Fragen aus, die den höchsten Informationsgewinn bringen.
+                </p>
+                <h3 data-i18n="about-features-title">Features:</h3>
+                <ul class="about-list">
+                    <li data-i18n="about-feature-1"><strong>Adaptive Algorithmen:</strong> Intelligente Fragenauswahl basierend auf IRT</li>
+                    <li data-i18n="about-feature-2"><strong>Effizient:</strong> Präzise Ergebnisse in minimaler Zeit</li>
+                    <li data-i18n="about-feature-3"><strong>Wissenschaftlich:</strong> Fundiert auf modernen psychometrischen Methoden</li>
+                    <li data-i18n="about-feature-4"><strong>Multi-Dimensional:</strong> Messung mehrerer Persönlichkeits-Traits</li>
+                    <li data-i18n="about-feature-5"><strong>4 Sprachen:</strong> Deutsch, Englisch, Französisch, Spanisch</li>
+                </ul>
+                <p data-i18n="about-method">
+                    Der Test nutzt ein adaptives Verfahren, das ähnlich wie moderne IQ-Tests funktioniert: 
+                    Je nachdem wie du antwortest, werden die folgenden Fragen angepasst, um dein Profil mit maximaler Genauigkeit zu erfassen.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/question-pool.js"></script>
+    <script src="js/adaptive-engine.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function toggleHowToUse() {
+            const instructions = document.querySelector('.how-to-use .instructions');
+            const toggle = document.querySelector('.how-to-use-toggle');
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            instructions.classList.toggle('collapsed');
+            toggle.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        function openAboutModal() {
+            document.getElementById('aboutModal').classList.remove('hidden');
+        }
+        
+        function closeAboutModal() {
+            document.getElementById('aboutModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
