@@ -1,16 +1,4 @@
-/**
- * TRAITORA QUESTION POOL
- * 
- * Struktur basierend auf Item Response Theory (IRT)
- * Jede Frage wird mit Metadaten versehen für adaptive Auswahl
- * 
- * EINFACH ERWEITERBAR: Neue Fragen einfach am Ende hinzufügen!
- */
-
-const QUESTION_POOL = [
-  // ============================================
-  // SCREENING QUESTIONS (breite Einstiegsfragen)
-  // ============================================
+[
   {
     id: "Q001",
     text: {
@@ -73,8 +61,8 @@ const QUESTION_POOL = [
         }
       }
     ],
-    difficulty: 0.0,        // Neutrale Schwierigkeit für Screening
-    discrimination: 1.0,    // Gute Unterscheidungskraft
+    difficulty: 0.0,
+    discrimination: 1.0,
     reverse: false
   },
 
@@ -145,9 +133,6 @@ const QUESTION_POOL = [
     reverse: false
   },
 
-  // ============================================
-  // VERTIEFENDE FRAGEN - ANALYTISCH
-  // ============================================
   {
     id: "Q003",
     text: {
@@ -215,9 +200,6 @@ const QUESTION_POOL = [
     reverse: false
   },
 
-  // ============================================
-  // SOZIALE TRAITS
-  // ============================================
   {
     id: "Q004",
     text: {
@@ -279,15 +261,12 @@ const QUESTION_POOL = [
           social: -0.8
         }
       }
-    },
+    ],
     difficulty: 0.2,
     discrimination: 1.1,
     reverse: false
   },
 
-  // ============================================
-  // EMOTIONALE STABILITÄT
-  // ============================================
   {
     id: "Q005",
     text: {
@@ -355,9 +334,6 @@ const QUESTION_POOL = [
     reverse: false
   },
 
-  // ============================================
-  // IMPULSIVITÄT & RISIKOBEREITSCHAFT
-  // ============================================
   {
     id: "Q006",
     text: {
@@ -425,9 +401,6 @@ const QUESTION_POOL = [
     reverse: false
   },
 
-  // ============================================
-  // GEWISSENHAFTIGKEIT & DISZIPLIN
-  // ============================================
   {
     id: "Q007",
     text: {
@@ -495,9 +468,6 @@ const QUESTION_POOL = [
     reverse: false
   },
 
-  // ============================================
-  // KREATIVITÄT & OFFENHEIT
-  // ============================================
   {
     id: "Q008",
     text: {
@@ -565,9 +535,6 @@ const QUESTION_POOL = [
     reverse: false
   },
 
-  // ============================================
-  // REVERSE ITEMS (gegen Ja-Sager-Tendenz)
-  // ============================================
   {
     id: "Q009",
     text: {
@@ -585,7 +552,7 @@ const QUESTION_POOL = [
           es: "Totalmente de acuerdo"
         },
         traits: {
-          honesty_check: -1.0  // Unrealistische Antwort
+          honesty_check: -1.0
         }
       },
       {
@@ -618,7 +585,7 @@ const QUESTION_POOL = [
           es: "No estoy de acuerdo"
         },
         traits: {
-          honesty_check: 0.8  // Realistische Selbsteinschätzung
+          honesty_check: 0.8
         }
       }
     ],
@@ -644,7 +611,7 @@ const QUESTION_POOL = [
           es: "Totalmente de acuerdo"
         },
         traits: {
-          honesty_check: 0.9  // Konsistent mit Q009
+          honesty_check: 0.9
         }
       },
       {
@@ -677,51 +644,17 @@ const QUESTION_POOL = [
           es: "No estoy de acuerdo"
         },
         traits: {
-          honesty_check: -0.8  // Widerspruch zu Q009!
+          honesty_check: -0.8
         }
       }
     ],
     difficulty: 0.0,
     discrimination: 0.5,
     reverse: true
-  }
-
-  // ============================================
-  // NEUE FRAGEN KÖNNEN HIER EINFACH HINZUGEFÜGT WERDEN
-  // ============================================
-  /*
-  ,{
-    id: "Q011",
-    text: {
-      de: "Deine Frage hier...",
-      en: "Your question here...",
-      fr: "Votre question ici...",
-      es: "Tu pregunta aquí..."
-    },
-    answers: [
-      {
-        text: {
-          de: "Antwort 1",
-          en: "Answer 1",
-          fr: "Réponse 1",
-          es: "Respuesta 1"
-        },
-        traits: {
-          trait_name: 0.8
-        }
-      }
-      // ... weitere Antworten
-    ],
-    difficulty: 0.0,
-    discrimination: 1.0,
-    reverse: false
-  }
-  */
+  },
 ];
 
-// ============================================
-// TRAIT DEFINITIONS
-// ============================================
+
 const TRAIT_DEFINITIONS = {
   analytical: {
     name: {
