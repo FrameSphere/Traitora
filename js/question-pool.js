@@ -690,7 +690,7 @@ const QUESTION_POOL = [
   // NEUE FRAGEN KÖNNEN HIER EINFACH HINZUGEFÜGT WERDEN
   // ============================================
   /*
-  {
+  ,{
     id: "Q011",
     text: {
       de: "Deine Frage hier...",
