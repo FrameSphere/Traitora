@@ -1,4 +1,4 @@
-[
+const QUESTION_POOL = [
   {
     id: "Q001",
     text: {
