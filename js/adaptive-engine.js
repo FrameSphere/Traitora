@@ -453,18 +453,20 @@ class AdaptiveEngine {
   getConfidencePercent() {
     const avgSE = this.getAverageStandardError();
     
-    // SE -> Konfidenz Mapping
-    // SE = 0.3 -> 95% Konfidenz
-    // SE = 0.5 -> 80% Konfidenz
-    // SE = 1.0 -> 40% Konfidenz
-    let baseConfidence = Math.max(0, Math.min(100, 100 - (avgSE * 60)));
+    // SE -> Konfidenz Mapping (FIXED: startet bei 0%)
+    // SE = 1.0 -> 0% Konfidenz (Start)
+    // SE = 0.5 -> 50% Konfidenz
+    // SE = 0.3 -> 70% Konfidenz
+    // SE = 0.0 -> 100% Konfidenz (theoretisches Maximum)
+    const seInverse = Math.max(0, 1 - avgSE);
+    let baseConfidence = Math.min(100, seInverse * 100);
     
     // Reduziere Konfidenz bei Inkonsistenzen
     const inconsistencyPenalty = this.inconsistencyFlags.length * 5;
     baseConfidence = Math.max(0, baseConfidence - inconsistencyPenalty);
     
-    // Erhöhe Konfidenz bei vielen Messungen
-    const measurementBonus = Math.min(10, this.answeredQuestions.size / 3);
+    // Erhöhe Konfidenz bei vielen Messungen (Bonus für ausreichende Datenbasis)
+    const measurementBonus = Math.min(15, this.answeredQuestions.size * 0.5);
     
     return Math.round(Math.min(100, baseConfidence + measurementBonus));
   }
@@ -542,18 +544,20 @@ class AdaptiveEngine {
   getTraitConfidence(trait) {
     const se = this.standardErrors[trait] || 1.0;
     
-    // SE zu Konfidenz Mapping
-    // SE = 0.3 -> 95% Konfidenz
-    // SE = 0.5 -> 80% Konfidenz  
-    // SE = 1.0 -> 40% Konfidenz
-    const baseConfidence = Math.max(0, Math.min(100, 100 - (se * 60)));
+    // SE zu Konfidenz Mapping (FIXED: startet bei 0%)
+    // SE = 1.0 -> 0% Konfidenz (Start)
+    // SE = 0.5 -> 50% Konfidenz
+    // SE = 0.3 -> 70% Konfidenz
+    // SE = 0.0 -> 100% Konfidenz (theoretisches Maximum)
+    const seInverse = Math.max(0, 1 - se);
+    const baseConfidence = Math.min(100, seInverse * 100);
     
-    // Anzahl Messungen berücksichtigen
+    // Anzahl Messungen berücksichtigen (Bonus für ausreichende Datenbasis)
     const measurements = this.answerHistory.filter(a => 
       Object.keys(a.traits).includes(trait)
     ).length;
     
-    const measurementBonus = Math.min(10, measurements * 2);
+    const measurementBonus = Math.min(15, measurements * 3);
     
     return Math.round(Math.min(100, baseConfidence + measurementBonus));
   }
