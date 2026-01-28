@@ -8,6 +8,7 @@ let currentLanguage = 'de';
 let adaptiveEngine = null;
 let currentQuestion = null;
 let questionCount = 0;
+let questionHistory = [];  // Speichert {question, answerIndex} für Zurück-Navigation
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -104,6 +105,7 @@ function startTest() {
   // Initialize adaptive engine
   adaptiveEngine = new AdaptiveEngine(QUESTION_POOL, TRAIT_DEFINITIONS);
   questionCount = 0;
+  questionHistory = [];  // Reset history
   
   // Hide start screen, show question container
   document.getElementById('startScreen').style.display = 'none';
@@ -126,6 +128,12 @@ function nextQuestion() {
     
     const answerIndex = parseInt(selectedAnswer.dataset.index);
     adaptiveEngine.processAnswer(currentQuestion, answerIndex);
+    
+    // Speichere in History für Zurück-Navigation
+    questionHistory.push({
+      question: currentQuestion,
+      answerIndex: answerIndex
+    });
   }
   
   // Check if test should terminate
@@ -177,9 +185,19 @@ function showQuestion() {
     answersContainer.appendChild(btn);
   });
   
+  // Wenn wir eine vorherige Antwort haben, markiere sie
+  const lastHistoryEntry = questionHistory[questionHistory.length - 1];
+  if (lastHistoryEntry && lastHistoryEntry.question.id === currentQuestion.id) {
+    const buttons = document.querySelectorAll('.answer-btn');
+    buttons[lastHistoryEntry.answerIndex]?.classList.add('selected');
+    document.getElementById('nextBtn').disabled = false;
+  }
+  
   // Update navigation
   document.getElementById('prevBtn').style.display = questionCount > 1 ? 'block' : 'none';
-  document.getElementById('nextBtn').disabled = true;
+  if (!lastHistoryEntry || lastHistoryEntry.question.id !== currentQuestion.id) {
+    document.getElementById('nextBtn').disabled = true;
+  }
   
   // Update next button text
   const shouldShowResults = adaptiveEngine && adaptiveEngine.shouldTerminateTest();
@@ -203,12 +221,35 @@ function selectAnswer(answerIndex) {
 }
 
 /**
- * Previous question (limited functionality in adaptive test)
+ * Previous question - gehe zur vorherigen Frage zurück
  */
 function previousQuestion() {
-  // In einem echten adaptiven Test ist "Zurück" problematisch
-  // da die Algorithmus-Entscheidungen nicht rückgängig gemacht werden können
-  alert(t('back-not-available') || 'Zurück-Navigation ist im adaptiven Test nicht verfügbar.');
+  if (questionHistory.length === 0) {
+    return;  // Keine vorherige Frage
+  }
+  
+  // Entferne letzte Frage aus History
+  questionHistory.pop();
+  questionCount--;
+  
+  // Initialisiere Engine neu
+  adaptiveEngine = new AdaptiveEngine(QUESTION_POOL, TRAIT_DEFINITIONS);
+  
+  // Spiele alle History-Antworten wieder ab
+  questionHistory.forEach(entry => {
+    adaptiveEngine.processAnswer(entry.question, entry.answerIndex);
+  });
+  
+  // Hole die vorherige Frage
+  if (questionHistory.length > 0) {
+    currentQuestion = questionHistory[questionHistory.length - 1].question;
+  } else {
+    // Wenn keine History mehr, hole erste Frage
+    currentQuestion = adaptiveEngine.selectNextQuestion();
+  }
+  
+  // Zeige Frage an
+  showQuestion();
 }
 
 /**
@@ -268,5 +309,6 @@ function restartTest() {
   adaptiveEngine = null;
   currentQuestion = null;
   questionCount = 0;
+  questionHistory = [];  // Reset history
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
