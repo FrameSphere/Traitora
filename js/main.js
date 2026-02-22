@@ -4,7 +4,8 @@
  */
 
 // Global variables
-let currentLanguage = 'de';
+// DEFAULT_LANG kann von der jeweiligen Sprachseite gesetzt werden (z.B. de/index.html)
+let currentLanguage = (window.DEFAULT_LANG || window.TRAITORA_LANG || localStorage.getItem('language') || 'de');
 let adaptiveEngine = null;
 let currentQuestion = null;
 let questionCount = 0;
@@ -12,9 +13,10 @@ let questionHistory = [];  // Speichert {question, answerIndex} für Zurück-Nav
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-  const savedLanguage = localStorage.getItem('language') || 'de';
-  currentLanguage = savedLanguage;
-  document.getElementById('languageSelect').value = savedLanguage;
+  // Sprache: Priorität hat die in der HTML-Seite gesetzte Sprache (DEFAULT_LANG)
+  currentLanguage = window.DEFAULT_LANG || window.TRAITORA_LANG || localStorage.getItem('language') || 'de';
+  const selectEl = document.getElementById('languageSelect');
+  if (selectEl) selectEl.value = currentLanguage;
   
   const savedTheme = localStorage.getItem('theme') || 'dark';
   const sunIcon = document.querySelector('.sun-icon');
@@ -32,14 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Change language
+ * Change language – navigates to the language subdirectory
+ * (used by pages without window.DEFAULT_LANG, kept for backwards compat)
  */
 function changeLanguage() {
-  currentLanguage = document.getElementById('languageSelect').value;
+  const lang = document.getElementById('languageSelect')?.value;
+  if (!lang) return;
+  // If we're already on a language subpage, navigate
+  if (window.DEFAULT_LANG || window.TRAITORA_LANG) {
+    const paths = { de: '../de/', en: '../en/', fr: '../fr/', es: '../es/' };
+    if (paths[lang]) { window.location.href = paths[lang]; return; }
+  }
+  currentLanguage = lang;
   localStorage.setItem('language', currentLanguage);
   updateUILanguage();
-  
-  // Refresh question if in test
   if (document.getElementById('questionContainer').style.display === 'block' && currentQuestion) {
     showQuestion();
   }

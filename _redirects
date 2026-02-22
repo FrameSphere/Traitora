@@ -1,27 +1,37 @@
 # ===============================
 # Cloudflare Pages Redirects
-# Personality Test
+# Traitora – Adaptive Personality Test
 # ===============================
 
-# ---- Static files (serve directly)
+# ---- Static assets
 /style.css               /style.css              200
-/script.js               /script.js              200
-/personality_test.json   /personality_test.json  200
-/translations.json       /translations.json      200
-
-# ---- Ads.txt (important for AdSense)
-/ads.txt      /ads.txt           200
-
-# ---- Robots & Sitemap
-/robots.txt   /robots.txt        200
-/sitemap.xml  /sitemap.xml       200
+/ads.txt                 /ads.txt                200
+/robots.txt              /robots.txt             200
+/sitemap.xml             /sitemap.xml            200
 
 # ---- Legal Pages
-/impressum.html     /impressum.html      200
-/datenschutz.html   /datenschutz.html    200
+/impressum.html          /impressum.html         200
+/datenschutz.html        /datenschutz.html       200
 
 # ---- Google Verification
 /google7ef57c38ed213579.html   /google7ef57c38ed213579.html   200
 
-# ---- SPA Fallback (ALWAYS LAST RULE!)
-/*            /index.html        200
+# ---- JS files (explicit)
+/js/*                    /js/:splat              200
+
+# ---- Assets
+/assets/*                /assets/:splat          200
+
+# ---- Language subdirectories
+/de/                     /de/index.html          200
+/de/*                    /de/:splat              200
+/en/                     /en/index.html          200
+/en/*                    /en/:splat              200
+/fr/                     /fr/index.html          200
+/fr/*                    /fr/:splat              200
+/es/                     /es/index.html          200
+/es/*                    /es/:splat              200
+
+# ---- Root: redirect to German (always last)
+/                        /de/                    302
+/*                       /de/                    302
