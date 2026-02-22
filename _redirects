@@ -34,4 +34,3 @@
 
 # ---- Root: redirect to German (always last)
 /                        /de/                    302
-/*                       /de/                    302
