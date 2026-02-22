@@ -22,8 +22,14 @@
     <meta property="og:description" content="Descubre tu personalidad con el test adaptativo IRT de Traitora. Gratis, científico, preciso.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://traitora.pages.dev/es/">
+    <meta property="og:site_name" content="Traitora">
     <meta property="og:locale" content="es_ES">
     <meta property="og:image" content="https://traitora.pages.dev/assets/favicon.svg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Test de Personalidad Adaptativo Científico – Traitora">
+    <meta name="twitter:description" content="Descubre tu personalidad con el test adaptativo IRT de Traitora.">
+    <meta name="twitter:image" content="https://traitora.pages.dev/assets/favicon.svg">
 
     <script type="application/ld+json">
     {
@@ -51,29 +57,136 @@
     </script>
 
     <style>
-        .seo-section { max-width: 860px; margin: 0 auto 2rem auto; padding: 0 1.5rem; }
-        .seo-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-align: center; }
-        .accordion-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; transition: var(--transition); }
-        .accordion-header { width: 100%; background: none; border: none; padding: 1.1rem 1.4rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text-primary); font-size: 1rem; font-weight: 600; text-align: left; transition: var(--transition); }
-        .accordion-header:hover { background: rgba(99,102,241,0.08); }
-        .accordion-header .acc-icon { flex-shrink: 0; width: 22px; height: 22px; color: var(--primary); transition: transform 0.3s ease; }
-        .accordion-header[aria-expanded="true"] .acc-icon { transform: rotate(180deg); }
-        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s ease; padding: 0 1.4rem; }
-        .accordion-body.open { max-height: 600px; padding: 0 1.4rem 1.2rem; }
-        .accordion-body p { color: var(--text-secondary); line-height: 1.75; font-size: 0.96rem; }
-        .accordion-body ul { margin: 0.6rem 0 0 1.2rem; color: var(--text-secondary); line-height: 1.75; font-size: 0.96rem; }
-        .quick-nav { max-width: 860px; margin: 0 auto 3rem auto; padding: 0 1.5rem; }
-        .quick-nav h2 { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-align: center; }
-        .quick-nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; }
-        .quick-nav-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.2rem; text-decoration: none; color: var(--text-primary); transition: var(--transition); }
-        .quick-nav-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(99,102,241,0.2); transform: translateY(-2px); }
-        .quick-nav-card .nav-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
-        .quick-nav-card .nav-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
-        .quick-nav-card .nav-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
-        .seo-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem auto; max-width: 860px; }
+        /* ── SEO Accordion ── */
+        .seo-section {
+            max-width: 860px;
+            margin: 0 auto 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .seo-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .accordion-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            transition: var(--transition);
+        }
+        .accordion-header:hover {
+            background: rgba(99,102,241,0.08);
+        }
+        .accordion-header .acc-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        .accordion-header[aria-expanded="true"] .acc-icon {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+            padding: 0 1.4rem;
+        }
+        .accordion-body.open {
+            max-height: 600px;
+            padding: 0 1.4rem 1.2rem;
+        }
+        .accordion-body p {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            font-size: 0.96rem;
+        }
+        .accordion-body ul {
+            margin: 0.6rem 0 0 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            font-size: 0.96rem;
+        }
+
+        /* ── Quick Nav ── */
+        .quick-nav {
+            max-width: 860px;
+            margin: 0 auto 3rem auto;
+            padding: 0 1.5rem;
+        }
+        .quick-nav h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .quick-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 0.9rem;
+        }
+        .quick-nav-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+        .quick-nav-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(99,102,241,0.2);
+            transform: translateY(-2px);
+        }
+        .quick-nav-card .nav-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .quick-nav-card .nav-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+        .quick-nav-card .nav-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .seo-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2.5rem auto;
+            max-width: 860px;
+        }
     </style>
 </head>
 <body>
+    <!-- Selector de idioma -->
     <div class="language-selector">
         <select id="languageSelect" onchange="navigateLanguage(this.value)" aria-label="Seleccionar idioma">
             <option value="de">Deutsch</option>
@@ -86,7 +199,11 @@
     <div class="theme-toggle">
         <button id="themeToggle" aria-label="Cambiar tema" onclick="toggleTheme()">
             <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
             <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -98,11 +215,12 @@
         <div class="header">
             <div class="header-content">
                 <h1>Traitora</h1>
-                <p>Test de Personalidad Adaptativo</p>
+                <p>Test de Personalidad Adaptativo Científico</p>
             </div>
         </div>
 
         <div class="content">
+            <!-- Pantalla de inicio -->
             <div class="start-screen" id="startScreen">
                 <h2>¡Bienvenido a Traitora!</h2>
                 <p>
@@ -110,20 +228,38 @@
                     Basado en la <strong>Teoría de Respuesta al Ítem (IRT)</strong>, obtendrás un perfil de personalidad preciso
                     con una inversión de tiempo mínima.
                 </p>
+                <p>
+                    El test es <strong>completamente gratuito</strong>, dura solo <strong>5–10 minutos</strong> y no requiere registro.
+                    Fue desarrollado científicamente y mide tu personalidad en múltiples dimensiones –
+                    de forma más eficiente y precisa que los tests clásicos como el MBTI o el Big Five.
+                    Más información en la <a href="sobre-traitora.html">página Sobre Traitora</a>.
+                </p>
                 <div class="feature-highlights">
-                    <div class="feature"><span class="feature-icon">🧠</span><span>Selección Adaptativa de Preguntas</span></div>
-                    <div class="feature"><span class="feature-icon">⚡</span><span>Medición Eficiente</span></div>
-                    <div class="feature"><span class="feature-icon">🎯</span><span>Resultados Precisos</span></div>
+                    <div class="feature">
+                        <span class="feature-icon">🧠</span>
+                        <span>Selección Adaptativa de Preguntas</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>Medición Eficiente</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎯</span>
+                        <span>Resultados Precisos</span>
+                    </div>
                 </div>
                 <button class="btn" onclick="startTest()">Comenzar test</button>
             </div>
 
+            <!-- Pantalla de preguntas -->
             <div class="question-container" id="questionContainer">
                 <div class="progress-info">
                     <div class="progress-text" id="progressText">Pregunta 1</div>
                     <div class="confidence-indicator">
                         <span>Precisión del Perfil:</span>
-                        <div class="confidence-bar"><div class="confidence-fill" id="confidenceFill"></div></div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill"></div>
+                        </div>
                         <span id="confidencePercent">0%</span>
                     </div>
                 </div>
@@ -137,6 +273,7 @@
                 </div>
             </div>
 
+            <!-- Pantalla de resultados -->
             <div class="result-screen" id="resultScreen">
                 <h2 class="result-title">Tu Perfil de Personalidad</h2>
                 <div class="trait-profiles" id="traitProfiles"></div>
@@ -152,28 +289,46 @@
 
     </div>
 
+    <!-- Cómo funciona -->
     <section class="how-to-use">
         <button class="how-to-use-toggle" onclick="toggleHowToUse()" aria-expanded="false">
             <h2 class="section-title">¿Cómo funciona el test adaptativo?</h2>
-            <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
         </button>
         <div class="instructions collapsed">
-            <div class="instruction-item"><span class="instruction-number">1</span><p>El test comienza con preguntas de detección amplias</p></div>
-            <div class="instruction-item"><span class="instruction-number">2</span><p>Según tus respuestas, el algoritmo selecciona estratégicamente la siguiente pregunta</p></div>
-            <div class="instruction-item"><span class="instruction-number">3</span><p>La precisión del perfil muestra qué tan exacto es tu resultado</p></div>
-            <div class="instruction-item"><span class="instruction-number">4</span><p>El test termina automáticamente cuando se alcanza suficiente precisión</p></div>
+            <div class="instruction-item">
+                <span class="instruction-number">1</span>
+                <p>El test comienza con preguntas de detección amplias</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">2</span>
+                <p>Según tus respuestas, el algoritmo selecciona estratégicamente la siguiente pregunta</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">3</span>
+                <p>La precisión del perfil muestra qué tan exacto es tu resultado</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">4</span>
+                <p>El test termina automáticamente cuando se alcanza suficiente precisión</p>
+            </div>
         </div>
     </section>
 
+    <!-- Modal Acerca de -->
     <div id="aboutModal" class="modal hidden">
         <div class="modal-overlay" onclick="closeAboutModal()"></div>
         <div class="modal-content">
             <button class="modal-close" onclick="closeAboutModal()" aria-label="Cerrar">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
             </button>
             <h2 class="modal-title">Acerca de Traitora</h2>
             <div class="about-content">
-                <p><strong>Traitora</strong> es un <strong>test de personalidad adaptativo</strong> científicamente basado en la <strong>Teoría de Respuesta al Ítem (IRT)</strong>. A diferencia de los tests estáticos, Traitora se adapta inteligentemente a tus respuestas y selecciona las preguntas que proporcionan la mayor ganancia de información.</p>
+                <p><strong>Traitora</strong> es un <strong>test de personalidad adaptativo</strong> científicamente basado en la <strong>Teoría de Respuesta al Ítem (IRT)</strong>. A diferencia de los tests estáticos, Traitora se adapta inteligentemente a tus respuestas y selecciona las preguntas que aportan la mayor ganancia de información.</p>
                 <h3>Características:</h3>
                 <ul class="about-list">
                     <li><strong>Algoritmos Adaptativos:</strong> Selección inteligente de preguntas basada en IRT</li>
@@ -182,26 +337,34 @@
                     <li><strong>Multi-Dimensional:</strong> Mide múltiples rasgos de personalidad</li>
                     <li><strong>4 Idiomas:</strong> Alemán, Inglés, Francés, Español</li>
                 </ul>
+                <p>El test utiliza un procedimiento adaptativo similar al de los tests de CI modernos: en función de cómo respondes, las siguientes preguntas se ajustan para capturar tu perfil con la máxima precisión.</p>
             </div>
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CONTENIDO SEO                               -->
+    <!-- ═══════════════════════════════════════════ -->
+
     <hr class="seo-divider">
 
+    <!-- Acordeones SEO -->
     <section class="seo-section" aria-label="Más información sobre el test">
         <h2>Todo sobre el Test de Personalidad Adaptativo</h2>
 
+        <!-- Acordeón 1 -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                 <span>¿Qué es un test de personalidad adaptativo?</span>
                 <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="accordion-body">
-                <p>Un <strong>test de personalidad adaptativo</strong> se ajusta en tiempo real a tus respuestas – a diferencia de los tests clásicos que presentan las mismas preguntas en un orden fijo para todos. El sistema analiza cada respuesta al instante y selecciona la siguiente pregunta para maximizar la información sobre tu perfil.</p>
+                <p>Un <strong>test de personalidad adaptativo</strong> se ajusta en tiempo real a tus respuestas – a diferencia de los tests clásicos que presentan las mismas preguntas en un orden fijo para todos. El sistema analiza cada respuesta al instante y selecciona la siguiente pregunta para maximizar la información sobre tu perfil personal.</p>
                 <p style="margin-top:0.75rem;">El resultado: <strong>menos preguntas, más precisión.</strong> En lugar de 100 preguntas genéricas, respondes 15–30 preguntas específicas y obtienes un perfil de personalidad igual de preciso – o incluso más preciso.</p>
             </div>
         </div>
 
+        <!-- Acordeón 2 -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                 <span>¿Qué es la Teoría de Respuesta al Ítem (IRT)?</span>
@@ -210,14 +373,15 @@
             <div class="accordion-body">
                 <p>La <strong>Teoría de Respuesta al Ítem (IRT)</strong> es un modelo psicométrico que describe cómo la respuesta de una persona a una pregunta se relaciona con su rasgo subyacente. Cada pregunta tiene tres propiedades:</p>
                 <ul>
-                    <li><strong>Dificultad:</strong> ¿Qué tan pronunciado debe ser un rasgo para responder así?</li>
-                    <li><strong>Discriminación:</strong> ¿Qué tan bien diferencia la pregunta entre distintos niveles de rasgo?</li>
-                    <li><strong>Parámetro de azar:</strong> ¿Cuál es la probabilidad de una respuesta correcta al azar?</li>
+                    <li><strong>Dificultad:</strong> ¿Qué tan pronunciado debe ser un rasgo para responder de cierta manera?</li>
+                    <li><strong>Discriminación:</strong> ¿Qué tan bien diferencia la pregunta entre distintos niveles del rasgo?</li>
+                    <li><strong>Parámetro de azar:</strong> ¿Cuál es la probabilidad de una respuesta aleatoria?</li>
                 </ul>
                 <p style="margin-top:0.75rem;">Traitora usa IRT para recalcular tu perfil de rasgos tras cada respuesta y seleccionar la siguiente pregunta más informativa.</p>
             </div>
         </div>
 
+        <!-- Acordeón 3 -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                 <span>¿Qué rasgos de personalidad mide Traitora?</span>
@@ -238,18 +402,21 @@
             </div>
         </div>
 
+        <!-- Acordeón 4 -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                 <span>¿Por qué los tests adaptativos son mejores que los estáticos?</span>
                 <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="accordion-body">
-                <p>Los tests de personalidad clásicos hacen las mismas preguntas a todos – independientemente de si son informativas para esa persona. Esto lleva a pérdida de tiempo e imprecisión innecesaria.</p>
-                <p style="margin-top:0.75rem;"><strong>Los tests adaptativos como Traitora</strong> lo evitan: cada pregunta se selecciona cuidadosamente para perfilar al máximo tu personalidad. Esto ahorra tiempo y aumenta la precisión – una ventaja clara sobre tests estáticos como el MBTI clásico o los test online simples.</p>
+                <p>Los tests de personalidad clásicos hacen las mismas preguntas a todos – independientemente de si son informativas para esa persona. Esto genera pérdida de tiempo e imprecisión innecesaria.</p>
+                <p style="margin-top:0.75rem;"><strong>Los tests adaptativos como Traitora</strong> lo evitan: cada pregunta se selecciona cuidadosamente para perfilar al máximo tu personalidad. Esto ahorra tiempo y aumenta la precisión – una ventaja clara sobre tests estáticos como el MBTI clásico o los tests online simples.</p>
+                <p style="margin-top:0.75rem;">Traitora es una <strong>alternativa científicamente fundamentada</strong> a tests de personalidad conocidos como el MBTI o los cuestionarios clásicos de Big Five – con muchas menos preguntas y mayor transparencia sobre la precisión de medición. Encuentra respuestas a preguntas frecuentes sobre el test en nuestro <a href="faq.html">FAQ</a>.</p>
             </div>
         </div>
     </section>
 
+    <!-- ── Navegación rápida ── -->
     <hr class="seo-divider">
 
     <section class="quick-nav" aria-label="Temas complementarios">
@@ -263,7 +430,7 @@
             <a href="irt-explicado.html" class="quick-nav-card">
                 <span class="nav-icon">📊</span>
                 <span class="nav-title">IRT explicado</span>
-                <span class="nav-desc">La teoría de respuesta al ítem de forma comprensible</span>
+                <span class="nav-desc">La Teoría de Respuesta al Ítem de forma comprensible</span>
             </a>
             <a href="comparacion-tests.html" class="quick-nav-card">
                 <span class="nav-icon">🔍</span>
@@ -275,6 +442,16 @@
                 <span class="nav-title">Rasgos explicados</span>
                 <span class="nav-desc">¿Qué significan tus rasgos de personalidad?</span>
             </a>
+            <a href="sobre-traitora.html" class="quick-nav-card">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-title">Sobre Traitora</span>
+                <span class="nav-desc">¿Quién está detrás de Traitora y cómo fue desarrollado?</span>
+            </a>
+            <a href="faq.html" class="quick-nav-card">
+                <span class="nav-icon">❓</span>
+                <span class="nav-title">FAQ</span>
+                <span class="nav-desc">Preguntas frecuentes sobre Traitora y los tests de personalidad</span>
+            </a>
         </div>
     </section>
 
@@ -282,16 +459,22 @@
         <div class="footer-links">
             <a href="#" onclick="openAboutModal(); return false;">Acerca de Traitora</a>
             <span class="footer-separator">·</span>
+            <a href="sobre-traitora.html">Sobre nosotros</a>
+            <span class="footer-separator">·</span>
+            <a href="faq.html">FAQ</a>
+            <span class="footer-separator">·</span>
             <a href="../impressum.html">Aviso legal</a>
             <span class="footer-separator">·</span>
             <a href="../datenschutz.html">Privacidad</a>
         </div>
         <div class="footer-copyright">
-            <p class="copyright">© Traitora 2026 · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+            <p class="copyright">© Traitora 2026 · powered by
+            <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
         </div>
     </footer>
 
     <script>
+        // Idioma = Español (fijo)
         window.TRAITORA_LANG = 'es';
 
         function navigateLanguage(lang) {
@@ -321,7 +504,9 @@
     <script src="../js/translations.js"></script>
     <script src="../js/question-pool.js"></script>
     <script src="../js/adaptive-engine.js"></script>
-    <script>window.DEFAULT_LANG = 'es';</script>
+    <script>
+        window.DEFAULT_LANG = 'es';
+    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>

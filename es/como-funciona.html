@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo funciona el Test de Personalidad Adaptativo? – Traitora</title>
+    <meta name="description" content="Explicación paso a paso: ¿Cómo funciona el algoritmo adaptativo de Traitora? Aprende cómo interactúan la Teoría de Respuesta al Ítem y el testing adaptativo.">
+    <link rel="canonical" href="https://traitora.pages.dev/es/como-funciona.html">
+    <link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/como-funciona.html">
+    <link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/de/wie-es-funktioniert.html">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta property="og:title" content="¿Cómo funciona el Test de Personalidad Adaptativo? – Traitora">
+    <meta property="og:description" content="Explicación paso a paso del algoritmo adaptativo de Traitora.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://traitora.pages.dev/es/como-funciona.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "¿Cómo funciona el Test de Personalidad Adaptativo?",
+      "description": "Explicación paso a paso del algoritmo adaptativo de Traitora basado en la Teoría de Respuesta al Ítem.",
+      "url": "https://traitora.pages.dev/es/como-funciona.html",
+      "inLanguage": "es",
+      "publisher": { "@type": "Organization", "name": "Traitora", "url": "https://traitora.pages.dev" }
+    }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); })();</script>
+    <style>
+        .article-wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        .article-wrap h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .article-meta { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 2rem; }
+        .article-wrap h2 { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin: 2.2rem 0 0.8rem; border-left: 4px solid var(--primary); padding-left: 0.8rem; }
+        .article-wrap h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin: 1.5rem 0 0.5rem; }
+        .article-wrap p { color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+        .article-wrap ul, .article-wrap ol { color: var(--text-secondary); line-height: 1.85; margin: 0.5rem 0 1rem 1.4rem; }
+        .article-wrap li { margin-bottom: 0.4rem; }
+        .article-wrap strong { color: var(--text-primary); }
+        .step-grid { display: grid; gap: 1rem; margin: 1.5rem 0; }
+        .step-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.4rem; display: flex; gap: 1.2rem; align-items: flex-start; }
+        .step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--accent-gradient); color: #fff; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .step-text h3 { margin: 0 0 0.3rem; font-size: 1rem; color: var(--text-primary); }
+        .step-text p { margin: 0; font-size: 0.93rem; }
+        .info-box { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; padding: 1.1rem 1.3rem; margin: 1.5rem 0; }
+        .info-box p { margin: 0; font-size: 0.94rem; }
+        .back-nav { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.93rem; margin-bottom: 2rem; transition: opacity 0.2s; }
+        .back-nav:hover { opacity: 0.75; }
+        .related-links { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; margin-top: 3rem; }
+        .related-links h3 { font-size: 1rem; margin: 0 0 1rem; color: var(--text-primary); }
+        .related-links ul { list-style: none; margin: 0; padding: 0; }
+        .related-links li { margin-bottom: 0.5rem; }
+        .related-links a { color: var(--primary); text-decoration: none; font-size: 0.93rem; font-weight: 500; }
+        .related-links a:hover { text-decoration: underline; }
+        .top-nav { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .top-nav-brand { font-weight: 800; font-size: 1.1rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .top-nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .top-nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .top-nav-links a:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="top-nav-brand">Traitora</a>
+        <div class="top-nav-links">
+            <a href="index.html">Comenzar test</a>
+            <a href="faq.html">FAQ</a>
+            <a href="sobre-traitora.html">Sobre nosotros</a>
+        </div>
+    </nav>
+
+    <main class="article-wrap">
+        <a href="index.html" class="back-nav">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Volver al test
+        </a>
+
+        <h1>¿Cómo funciona el Test de Personalidad Adaptativo?</h1>
+        <p class="article-meta">Tiempo de lectura: aprox. 6 minutos · Categoría: Algoritmo &amp; Metodología</p>
+
+        <p>¿Alguna vez te has preguntado por qué algunos tests de personalidad hacen 100 preguntas, mientras que Traitora ofrece resultados igual de precisos – o incluso más precisos – con muchas menos preguntas? La respuesta está en el <strong>algoritmo adaptativo</strong> que hay detrás de Traitora. En esta página te explicamos paso a paso cómo funciona este proceso y por qué supone un gran avance sobre los tests clásicos como el MBTI o el Big Five.</p>
+
+        <h2>¿Qué significa exactamente "adaptativo"?</h2>
+        <p>La palabra "adaptativo" viene del latín <em>adaptare</em> – adaptar. Un test adaptativo se ajusta en tiempo real a la persona que lo realiza. Suena sencillo, pero esconde una elegante matemática: después de cada respuesta, el algoritmo calcula qué información ya ha recopilado sobre ti y qué pregunta produciría a continuación la <strong>mayor ganancia de información</strong>.</p>
+
+        <p>Por el contrario, los tests de personalidad clásicos – ya sea el Big Five, el MBTI u otros – presentan a todos los participantes las mismas preguntas en el mismo orden. Es como si un médico hiciera las mismas preguntas a cada paciente, independientemente de si es joven o mayor, sano o enfermo. El testing adaptativo es la alternativa personalizada.</p>
+
+        <h2>El proceso de un vistazo</h2>
+        <div class="step-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                    <h3>Inicialización</h3>
+                    <p>Al principio, el sistema aún no tiene información sobre ti. El algoritmo comienza con <strong>preguntas de detección amplias</strong> – preguntas que son informativas para la mayor variedad posible de personas. Estas primeras preguntas cubren simultáneamente varios rasgos distintos.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                    <h3>Procesar la respuesta</h3>
+                    <p>Das una respuesta. El algoritmo analiza de inmediato qué <strong>niveles de rasgos</strong> implica esa respuesta. Cada opción de respuesta está asociada con ponderaciones para distintas dimensiones de personalidad – por ejemplo, "+0,8 Analítica", "−0,5 Impulsividad".</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                    <h3>Actualizar el perfil</h3>
+                    <p>En base a todas las respuestas anteriores, el sistema calcula un <strong>perfil de probabilidad</strong> actualizado para cada uno de tus rasgos. ¿Qué valor es más probable? ¿Qué tan seguros estamos? Esta nitidez se te muestra como precisión del perfil.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                    <h3>Seleccionar la siguiente pregunta</h3>
+                    <p>El algoritmo recorre todo el banco de preguntas y elige la que – según tu perfil actual – proporcionaría la <strong>mayor ganancia de información</strong>. Una pregunta que con alta probabilidad responderías de todas formas de una manera determinada aporta poco. Una pregunta sobre la que aún existe incertidumbre real aporta mucho.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">5</div>
+                <div class="step-text">
+                    <h3>Repetición hasta la convergencia</h3>
+                    <p>Los pasos 2–4 se repiten. Con cada respuesta, las estimaciones se vuelven más precisas, la incertidumbre disminuye. En algún momento se cumple el <strong>criterio de convergencia</strong>: más preguntas apenas mejorarían el resultado. En ese punto, el test termina automáticamente.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">6</div>
+                <div class="step-text">
+                    <h3>Mostrar el resultado</h3>
+                    <p>Se calcula y visualiza el perfil de personalidad final. Ves tu nivel en cada dimensión, junto con la <strong>precisión de medición</strong> por rasgo – porque distintos rasgos pueden haberse medido con distinta precisión, según lo inequívocas que hayan sido tus respuestas.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>La base matemática: Información de Fisher</h2>
+        <p>Para decidir qué pregunta viene a continuación, Traitora utiliza el concepto de <strong>Información de Fisher</strong>. En pocas palabras: una pregunta contiene mucha información sobre un rasgo cuando puede discriminar bien ese rasgo – es decir, cuando la probabilidad de responderla de una determinada manera se correlaciona fuertemente con el nivel del rasgo.</p>
+
+        <p>Imagina que estás evaluando el rasgo "Toma de riesgos". Una pregunta como "¿A veces eres valiente?" es poco informativa – casi todo el mundo estaría de acuerdo. Una pregunta como "¿Invertirías todos tus ahorros en una única inversión arriesgada?" diferencia mucho mejor entre niveles bajos y altos de tolerancia al riesgo.</p>
+
+        <div class="info-box">
+            <p>💡 <strong>Recuerda:</strong> El algoritmo adaptativo maximiza con cada pregunta la llamada <em>Información de Fisher Esperada</em> – es decir, la ganancia de información esperada, ponderada según la probabilidad de cada posible respuesta.</p>
+        </div>
+
+        <h2>¿En qué se diferencia esto de los tests clásicos?</h2>
+        <p>Los tests clásicos como el MBTI o el NEO-PI-R tienen un número y orden de preguntas fijos. Eso tiene una gran desventaja: para personas en los extremos de una escala de rasgo – es decir, con niveles muy altos o muy bajos – muchas de las preguntas intermedias son poco informativas. Una persona muy introvertida puede aprender poco sobre sí misma respondiendo diez preguntas sobre "sociabilidad moderada".</p>
+
+        <p>Los tests adaptativos resuelven este problema adaptándose automáticamente al nivel real del rasgo de la persona. Esto conduce a:</p>
+        <ul>
+            <li><strong>Tests más cortos</strong> con igual o mejor precisión</li>
+            <li><strong>Menos frustración</strong> por preguntas irrelevantes</li>
+            <li><strong>Mayor validez</strong>, porque el instrumento de medición se adapta a la persona</li>
+            <li><strong>Menos errores de medición</strong> gracias a la selección óptima de preguntas</li>
+        </ul>
+
+        <h2>¿Qué pasa con el orden de las preguntas y la navegación hacia atrás?</h2>
+        <p>Traitora te permite retroceder una pregunta y corregir una respuesta. Eso es técnicamente más exigente de lo que parece: como cada pregunta fue seleccionada en base a todas las respuestas anteriores, el algoritmo debe <strong>recalcular desde el principio</strong> cuando hay una corrección – todas las respuestas se procesan de nuevo y se redetermina el flujo de preguntas. Así el resultado siempre es consistente con tus respuestas reales.</p>
+
+        <h2>¿Cuántas preguntas necesita Traitora?</h2>
+        <p>El número de preguntas depende de tus patrones de respuesta. En promedio, Traitora termina el test con <strong>15–25 preguntas</strong>. Si tus respuestas son muy claras y consistentes, el criterio de convergencia puede cumplirse antes. Si muestras niveles intermedios en muchos rasgos, el test puede ser algo más largo porque se necesitan más preguntas para resolver incertidumbres.</p>
+
+        <p>El test también puede estar limitado por un umbral máximo – así se evita que dure indefinidamente. Si se alcanza ese umbral, el resultado se calcula en base a los datos recopilados hasta ese momento.</p>
+
+        <h2>¿Por qué Traitora sigue siendo gratuito?</h2>
+        <p>Traitora se financia a través de anuncios (AdSense). La tecnología que hay detrás – el testing adaptativo basado en IRT – lleva décadas disponible en la investigación académica y se utiliza en grandes tests educativos como el GRE o el TOEFL. Traitora pone esta metodología al alcance de todos, sin requerir formación académica – como alternativa gratuita y científicamente fundamentada a tests de pago como el MBTI oficial. Las preguntas frecuentes sobre financiación y privacidad las responde el <a href="faq.html">FAQ</a>.</p>
+
+        <div class="info-box">
+            <p>🎯 <strong>¿Listo para tu test?</strong> Comienza ahora tu test de personalidad adaptativo – gratis, en pocos minutos, sin registro.</p>
+        </div>
+
+        <div class="related-links">
+            <h3>Temas relacionados</h3>
+            <ul>
+                <li><a href="irt-explicado.html">→ ¿Qué es la Teoría de Respuesta al Ítem (IRT)?</a></li>
+                <li><a href="rasgos-explicados.html">→ ¿Qué miden los rasgos – y qué significan?</a></li>
+                <li><a href="comparacion-tests.html">→ Traitora vs. MBTI, Big Five &amp; más – una comparación</a></li>
+                <li><a href="faq.html">→ Preguntas frecuentes sobre el test (FAQ)</a></li>
+                <li><a href="index.html">→ Comenzar ahora el test de personalidad</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Comenzar test</a>
+            <span class="footer-separator">·</span>
+            <a href="sobre-traitora.html">Sobre nosotros</a>
+            <span class="footer-separator">·</span>
+            <a href="faq.html">FAQ</a>
+            <span class="footer-separator">·</span>
+            <a href="../impressum.html">Aviso legal</a>
+            <span class="footer-separator">·</span>
+            <a href="../datenschutz.html">Privacidad</a>
+        </div>
+        <div class="footer-copyright">
+            <p class="copyright">© Traitora 2026 · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría de Respuesta al Ítem (IRT) explicada – Traitora</title>
+    <meta name="description" content="¿Qué es la Teoría de Respuesta al Ítem (IRT)? Explicada de forma sencilla y comprensible: la base científica detrás de los tests de personalidad adaptativos como Traitora.">
+    <link rel="canonical" href="https://traitora.pages.dev/es/irt-explicado.html">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta property="og:title" content="Teoría de Respuesta al Ítem (IRT) explicada – Traitora">
+    <meta property="og:description" content="La base científica detrás de los tests de personalidad adaptativos: IRT explicada de forma comprensible.">
+    <meta property="og:type" content="article">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Teoría de Respuesta al Ítem (IRT) explicada de forma sencilla",
+      "description": "La base científica detrás de los tests de personalidad adaptativos.",
+      "url": "https://traitora.pages.dev/es/irt-explicado.html",
+      "inLanguage": "es",
+      "publisher": { "@type": "Organization", "name": "Traitora", "url": "https://traitora.pages.dev" }
+    }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); })();</script>
+    <style>
+        .article-wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        .article-wrap h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .article-meta { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 2rem; }
+        .article-wrap h2 { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin: 2.2rem 0 0.8rem; border-left: 4px solid var(--primary); padding-left: 0.8rem; }
+        .article-wrap h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin: 1.5rem 0 0.5rem; }
+        .article-wrap p { color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+        .article-wrap ul, .article-wrap ol { color: var(--text-secondary); line-height: 1.85; margin: 0.5rem 0 1rem 1.4rem; }
+        .article-wrap li { margin-bottom: 0.4rem; }
+        .article-wrap strong { color: var(--text-primary); }
+        .param-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .param-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; }
+        .param-card .param-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+        .param-card h3 { margin: 0 0 0.4rem; font-size: 1rem; color: var(--text-primary); }
+        .param-card p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .info-box { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; padding: 1.1rem 1.3rem; margin: 1.5rem 0; }
+        .info-box p { margin: 0; font-size: 0.94rem; color: var(--text-secondary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .comparison-table th { background: var(--bg-card); color: var(--text-primary); padding: 0.8rem 1rem; text-align: left; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid var(--border); }
+        .comparison-table td { padding: 0.75rem 1rem; color: var(--text-secondary); font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { font-weight: 600; color: var(--text-primary); }
+        .back-nav { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.93rem; margin-bottom: 2rem; }
+        .back-nav:hover { opacity: 0.75; }
+        .related-links { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; margin-top: 3rem; }
+        .related-links h3 { font-size: 1rem; margin: 0 0 1rem; color: var(--text-primary); }
+        .related-links ul { list-style: none; margin: 0; padding: 0; }
+        .related-links li { margin-bottom: 0.5rem; }
+        .related-links a { color: var(--primary); text-decoration: none; font-size: 0.93rem; font-weight: 500; }
+        .related-links a:hover { text-decoration: underline; }
+        .top-nav { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .top-nav-brand { font-weight: 800; font-size: 1.1rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .top-nav-links { display: flex; gap: 1.5rem; }
+        .top-nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .top-nav-links a:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="top-nav-brand">Traitora</a>
+        <div class="top-nav-links">
+            <a href="index.html">Comenzar test</a>
+            <a href="faq.html">FAQ</a>
+            <a href="sobre-traitora.html">Sobre nosotros</a>
+        </div>
+    </nav>
+
+    <main class="article-wrap">
+        <a href="index.html" class="back-nav">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Volver al test
+        </a>
+
+        <h1>Teoría de Respuesta al Ítem (IRT) explicada</h1>
+        <p class="article-meta">Tiempo de lectura: aprox. 7 minutos · Categoría: Ciencia &amp; Psicometría</p>
+
+        <p>Detrás de todo test adaptativo serio existe una teoría matemática: la <strong>Teoría de Respuesta al Ítem</strong>, abreviada IRT (del inglés <em>Item Response Theory</em>). Describe cómo la respuesta de una persona a una pregunta (un "ítem") se relaciona con su característica subyacente (su "rasgo" o "atributo latente"). Suena complejo – pero no lo es tanto si se explica paso a paso.</p>
+
+        <h2>¿Qué es un "atributo latente"?</h2>
+        <p>Un <strong>atributo latente</strong> es una característica que no puede observarse directamente, sino que solo puede inferirse a través del comportamiento y las reacciones. Los rasgos de personalidad como la empatía, el pensamiento analítico o la tolerancia al riesgo son atributos latentes clásicos – no puedes medirlos como un análisis de sangre, pero puedes observar cómo reacciona alguien en determinadas situaciones.</p>
+
+        <p>Eso es exactamente lo que hace un test de personalidad: plantea preguntas sobre situaciones, preferencias y comportamientos para sacar conclusiones sobre estos atributos latentes. La IRT formaliza matemáticamente este proceso.</p>
+
+        <h2>La idea central: la curva de probabilidad de respuesta</h2>
+        <p>En esencia, la IRT describe para cada pregunta una <strong>curva de probabilidad de respuesta</strong> (en inglés: Item Characteristic Curve, ICC). Esta curva muestra con qué probabilidad una persona con un determinado nivel de rasgo dará una determinada respuesta.</p>
+
+        <p>Imagina lo siguiente: medimos el rasgo "Pensamiento Analítico" en una escala de −3 (muy bajo) a +3 (muy alto). Para la pregunta "Prefiero analizar los problemas de forma lógica en lugar de intuitiva", la curva tiene aproximadamente este aspecto:</p>
+        <ul>
+            <li>Las personas con valores de analítica muy bajos están de acuerdo con baja probabilidad (~10%)</li>
+            <li>Las personas con valores medios están de acuerdo con ~50% de probabilidad</li>
+            <li>Las personas con valores muy altos casi siempre están de acuerdo (~90%)</li>
+        </ul>
+
+        <div class="info-box">
+            <p>📐 <strong>La curva en forma de S:</strong> Esta curva de probabilidad de respuesta tiene típicamente una forma de S (curva sigmoide). Cuanto más empinada sea la curva, mejor diferencia la pregunta entre distintos niveles del rasgo.</p>
+        </div>
+
+        <h2>Los tres parámetros de una pregunta IRT</h2>
+        <p>En el modelo clásico de tres parámetros de la IRT (3PL), cada pregunta tiene tres características propias:</p>
+
+        <div class="param-grid">
+            <div class="param-card">
+                <div class="param-icon">⚖️</div>
+                <h3>Dificultad (b)</h3>
+                <p>El parámetro de dificultad indica en qué nivel de rasgo la probabilidad de estar de acuerdo es del 50%. Una pregunta "difícil" solo es afirmada por personas con rasgos muy pronunciados.</p>
+            </div>
+            <div class="param-card">
+                <div class="param-icon">🎯</div>
+                <h3>Discriminación (a)</h3>
+                <p>La discriminación describe qué tan bien diferencia la pregunta entre distintos niveles del rasgo. Una alta discriminación significa: la curva es empinada – la pregunta es muy discriminante (en el sentido estadístico).</p>
+            </div>
+            <div class="param-card">
+                <div class="param-icon">🎲</div>
+                <h3>Probabilidad de acierto al azar (c)</h3>
+                <p>Este parámetro indica la probabilidad de una determinada respuesta incluso si alguien no posee el rasgo en absoluto. En los tests de personalidad, este parámetro suele estar cerca de cero.</p>
+            </div>
+        </div>
+
+        <h2>¿Cómo estima la IRT el valor del rasgo?</h2>
+        <p>Cuando respondes varias preguntas, el sistema tiene para cada respuesta una declaración de probabilidad: "¿Qué tan probable sería esta respuesta con un determinado valor de rasgo?" La IRT combina toda esta información con un procedimiento llamado <strong>Estimación de Máxima Verosimilitud (MLE)</strong> o <strong>estimación bayesiana</strong>.</p>
+
+        <p>En pocas palabras: el sistema busca el valor del rasgo que mejor explica por qué respondiste exactamente como lo hiciste. Con cada respuesta adicional, la estimación se vuelve más precisa – la incertidumbre disminuye.</p>
+
+        <h2>IRT vs. Teoría Clásica de los Tests (TCT)</h2>
+        <p>Durante mucho tiempo, la <strong>Teoría Clásica de los Tests (TCT)</strong> dominó la psicología. En la TCT, la puntuación de un test es simplemente la suma de los puntos brutos – cuantas más respuestas "correctas" o afirmativas, mayor el valor. Esto tiene graves desventajas:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Criterio</th>
+                    <th>Teoría Clásica</th>
+                    <th>Teoría de Respuesta al Ítem</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dependencia de preguntas</td>
+                    <td>El resultado depende mucho de las preguntas específicas</td>
+                    <td>El resultado es independiente de la selección específica de preguntas</td>
+                </tr>
+                <tr>
+                    <td>Independencia de personas</td>
+                    <td>Parámetros de preguntas dependientes de la muestra</td>
+                    <td>Parámetros de preguntas independientes de la muestra (con buena calibración)</td>
+                </tr>
+                <tr>
+                    <td>Error de medición</td>
+                    <td>Error estándar uniforme para todos</td>
+                    <td>Error estándar individual por persona</td>
+                </tr>
+                <tr>
+                    <td>Testing adaptativo</td>
+                    <td>Apenas posible</td>
+                    <td>Base ideal para CAT</td>
+                </tr>
+                <tr>
+                    <td>Eficiencia</td>
+                    <td>Todos responden el mismo número de preguntas</td>
+                    <td>Número mínimo de preguntas para máxima precisión</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>¿Qué es el Testing Adaptativo por Computadora (CAT)?</h2>
+        <p>La combinación de IRT y computadora hace posible el <strong>Testing Adaptativo por Computadora (CAT)</strong> – que es lo que implementa Traitora. El ordenador puede calcular en milisegundos qué pregunta tendrá la mayor ganancia de información como próxima. Eso sería impensable sin ordenador.</p>
+
+        <p>El CAT se utiliza desde la década de 1970 en la investigación educativa. Aplicaciones conocidas son el <strong>GMAT</strong> (Graduate Management Admission Test), el <strong>GRE</strong> (Graduate Record Examinations) y el <strong>TOEFL</strong> (Test of English as a Foreign Language). Traitora lleva esta tecnología al campo de la psicología de la personalidad.</p>
+
+        <h2>¿Qué tan buena es la IRT para los tests de personalidad?</h2>
+        <p>La IRT fue desarrollada originalmente para tests de rendimiento (p. ej., exámenes escolares) en los que existen respuestas correctas e incorrectas. En los tests de personalidad no hay respuestas "correctas" – cada respuesta revela algo sobre la personalidad de la persona.</p>
+
+        <p>Para este caso de uso, Traitora utiliza el <strong>modelo IRT politómico</strong> (específicamente el Modelo de Respuesta Graduada), adecuado para varias categorías de respuesta sin una "corrección" clara. Cada opción de respuesta está asociada con ponderaciones para distintos rasgos, y el sistema calcula qué constelación de rasgos se corresponde con mayor probabilidad con tu patrón de respuestas total.</p>
+
+        <h2>Equidad y comparabilidad</h2>
+        <p>Una ventaja importante de la IRT es la <strong>equidad entre diferentes grupos de personas</strong>. Dado que los tests basados en IRT tienen en cuenta los parámetros individuales de las preguntas, los resultados de distintas personas pueden compararse directamente – incluso si no respondieron las mismas preguntas. Eso no es posible en la teoría clásica.</p>
+
+        <p>Este principio se llama <strong>Invarianza de Medición</strong>: los valores de rasgo subyacentes pueden compararse entre diferentes grupos sin sesgos causados por distintos conjuntos de preguntas.</p>
+
+        <div class="info-box">
+            <p>🔬 <strong>Contexto científico:</strong> La IRT se remonta a los trabajos de Georg Rasch (1960) y Frederic Lord (1952). El modelo de tres parámetros, hoy más utilizado, fue formalizado por Lord y Novick (1968). Las aplicaciones modernas utilizan extensiones bayesianas para estimaciones aún más robustas.</p>
+        </div>
+
+        <div class="related-links">
+            <h3>Temas relacionados</h3>
+            <ul>
+                <li><a href="como-funciona.html">→ ¿Cómo funciona el algoritmo adaptativo de Traitora?</a></li>
+                <li><a href="rasgos-explicados.html">→ ¿Qué miden los rasgos – y qué significan?</a></li>
+                <li><a href="comparacion-tests.html">→ Traitora vs. MBTI, Big Five &amp; más</a></li>
+                <li><a href="faq.html">→ Preguntas frecuentes sobre el test (FAQ)</a></li>
+                <li><a href="index.html">→ Comenzar ahora el test de personalidad adaptativo</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Comenzar test</a>
+            <span class="footer-separator">·</span>
+            <a href="sobre-traitora.html">Sobre nosotros</a>
+            <span class="footer-separator">·</span>
+            <a href="faq.html">FAQ</a>
+            <span class="footer-separator">·</span>
+            <a href="../impressum.html">Aviso legal</a>
+            <span class="footer-separator">·</span>
+            <a href="../datenschutz.html">Privacidad</a>
+        </div>
+        <div class="footer-copyright">
+            <p class="copyright">© Traitora 2026 · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+        </div>
+    </footer>
+</body>
+</html>
