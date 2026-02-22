@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Response Theory (IRT) Explained – Traitora</title>
+    <meta name="description" content="What is Item Response Theory (IRT)? Explained simply and clearly: the scientific foundation behind adaptive personality tests like Traitora.">
+    <link rel="canonical" href="https://traitora.pages.dev/en/irt-explained.html">
+    <link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/irt-explained.html">
+    <link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/irt-erklaert.html">
+    <link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/en/irt-explained.html">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta property="og:title" content="Item Response Theory (IRT) Explained – Traitora">
+    <meta property="og:description" content="The scientific foundation behind adaptive personality tests: IRT explained simply.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://traitora.pages.dev/en/irt-explained.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Item Response Theory (IRT) Explained",
+      "description": "The scientific foundation behind adaptive personality tests, explained clearly.",
+      "url": "https://traitora.pages.dev/en/irt-explained.html",
+      "inLanguage": "en",
+      "publisher": { "@type": "Organization", "name": "Traitora", "url": "https://traitora.pages.dev" }
+    }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); })();</script>
+    <style>
+        .article-wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        .article-wrap h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .article-meta { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 2rem; }
+        .article-wrap h2 { font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin: 2.2rem 0 0.8rem; border-left: 4px solid var(--primary); padding-left: 0.8rem; }
+        .article-wrap h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin: 1.5rem 0 0.5rem; }
+        .article-wrap p { color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+        .article-wrap ul, .article-wrap ol { color: var(--text-secondary); line-height: 1.85; margin: 0.5rem 0 1rem 1.4rem; }
+        .article-wrap li { margin-bottom: 0.4rem; }
+        .article-wrap strong { color: var(--text-primary); }
+        .param-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .param-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; }
+        .param-card .param-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+        .param-card h3 { margin: 0 0 0.4rem; font-size: 1rem; color: var(--text-primary); }
+        .param-card p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .info-box { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; padding: 1.1rem 1.3rem; margin: 1.5rem 0; }
+        .info-box p { margin: 0; font-size: 0.94rem; color: var(--text-secondary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .comparison-table th { background: var(--bg-card); color: var(--text-primary); padding: 0.8rem 1rem; text-align: left; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid var(--border); }
+        .comparison-table td { padding: 0.75rem 1rem; color: var(--text-secondary); font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { font-weight: 600; color: var(--text-primary); }
+        .back-nav { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.93rem; margin-bottom: 2rem; }
+        .back-nav:hover { opacity: 0.75; }
+        .related-links { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; margin-top: 3rem; }
+        .related-links h3 { font-size: 1rem; margin: 0 0 1rem; color: var(--text-primary); }
+        .related-links ul { list-style: none; margin: 0; padding: 0; }
+        .related-links li { margin-bottom: 0.5rem; }
+        .related-links a { color: var(--primary); text-decoration: none; font-size: 0.93rem; font-weight: 500; }
+        .related-links a:hover { text-decoration: underline; }
+        .top-nav { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .top-nav-brand { font-weight: 800; font-size: 1.1rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .top-nav-links { display: flex; gap: 1.5rem; }
+        .top-nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .top-nav-links a:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="top-nav-brand">Traitora</a>
+        <div class="top-nav-links">
+            <a href="index.html">Take the Test</a>
+            <a href="faq.html">FAQ</a>
+            <a href="about-traitora.html">About</a>
+        </div>
+    </nav>
+
+    <main class="article-wrap">
+        <a href="index.html" class="back-nav">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Back to the Test
+        </a>
+
+        <h1>Item Response Theory (IRT) Explained</h1>
+        <p class="article-meta">Reading time: approx. 7 minutes · Category: Science &amp; Psychometrics</p>
+
+        <p>Behind every serious adaptive test lies a mathematical theory: <strong>Item Response Theory</strong>, or IRT for short. It describes how a person's response to a question (an "item") relates to their underlying characteristic (their "trait" or "latent attribute"). This sounds complex – but it isn't, once you work through it step by step.</p>
+
+        <h2>What Is a "Latent Attribute"?</h2>
+        <p>A <strong>latent attribute</strong> is a characteristic that cannot be observed directly, but can only be inferred from behaviour and responses. Personality traits like empathy, analytical thinking, or risk-taking are classic latent attributes – you can't measure them like a blood test, but you can observe how someone reacts in specific situations.</p>
+
+        <p>That is exactly what a personality test does: it asks questions about situations, preferences, and behaviours to draw conclusions about these latent attributes. IRT formalises this process mathematically.</p>
+
+        <h2>The Core Idea: The Item Characteristic Curve</h2>
+        <p>At its heart, IRT describes for every question an <strong>Item Characteristic Curve (ICC)</strong>. This curve shows how likely it is that a person with a given trait level will give a particular answer.</p>
+
+        <p>Imagine we are measuring "Analytical Thinking" on a scale from −3 (very low) to +3 (very high). For the question "I prefer to analyse problems logically rather than intuitively", the curve looks roughly like this:</p>
+        <ul>
+            <li>People with very low analytical scores agree with low probability (~10%)</li>
+            <li>People with mid-range scores agree with ~50% probability</li>
+            <li>People with very high scores agree almost always (~90%)</li>
+        </ul>
+
+        <div class="info-box">
+            <p>📐 <strong>The S-shaped curve:</strong> This item characteristic curve typically has an S-shape (sigmoid curve). The steeper the curve, the better the question distinguishes between different trait levels.</p>
+        </div>
+
+        <h2>The Three Parameters of an IRT Question</h2>
+        <p>In the classic 3-parameter IRT model (3PL), every question has three characteristic properties:</p>
+
+        <div class="param-grid">
+            <div class="param-card">
+                <div class="param-icon">⚖️</div>
+                <h3>Difficulty (b)</h3>
+                <p>The difficulty parameter indicates at which trait level the probability of agreement sits at 50%. A "difficult" question is only endorsed by people with very high trait levels.</p>
+            </div>
+            <div class="param-card">
+                <div class="param-icon">🎯</div>
+                <h3>Discrimination (a)</h3>
+                <p>Discrimination describes how well the question distinguishes between different trait levels. High discrimination means a steep curve – the question is highly informative in the statistical sense.</p>
+            </div>
+            <div class="param-card">
+                <div class="param-icon">🎲</div>
+                <h3>Guessing (c)</h3>
+                <p>This parameter indicates the probability of a particular response even when someone has essentially no trait at all. In personality tests this parameter is often close to zero.</p>
+            </div>
+        </div>
+
+        <h2>How Does IRT Estimate a Trait Value?</h2>
+        <p>When you answer several questions, the system has a probability statement for each answer: "How likely would this response be at a given trait level?" IRT combines all of this information using a procedure called <strong>Maximum Likelihood Estimation (MLE)</strong> or <strong>Bayesian estimation</strong>.</p>
+
+        <p>Simply put: the system finds the trait value that best explains why you answered exactly the way you did. With each additional answer the estimate becomes more precise – uncertainty shrinks.</p>
+
+        <h2>IRT vs. Classical Test Theory (CTT)</h2>
+        <p>For a long time <strong>Classical Test Theory (CTT)</strong> dominated psychology. In CTT a test score is simply the sum of raw points – the more "correct" or agreeing answers, the higher the score. This has significant drawbacks:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Criterion</th>
+                    <th>Classical Test Theory</th>
+                    <th>Item Response Theory</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Item Dependency</td>
+                    <td>Result depends strongly on the specific questions asked</td>
+                    <td>Result is independent of the specific question selection</td>
+                </tr>
+                <tr>
+                    <td>Sample Independence</td>
+                    <td>Item parameters depend on the sample</td>
+                    <td>Item parameters are sample-independent (with good calibration)</td>
+                </tr>
+                <tr>
+                    <td>Measurement Error</td>
+                    <td>Uniform standard error for everyone</td>
+                    <td>Individual standard error per person</td>
+                </tr>
+                <tr>
+                    <td>Adaptive Testing</td>
+                    <td>Barely feasible</td>
+                    <td>Ideal foundation for CAT</td>
+                </tr>
+                <tr>
+                    <td>Efficiency</td>
+                    <td>Everyone gets the same number of questions</td>
+                    <td>Minimal questions for maximum precision</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>What Is Computerized Adaptive Testing (CAT)?</h2>
+        <p>The combination of IRT and computers enables <strong>Computerized Adaptive Testing (CAT)</strong> – precisely what Traitora implements. A computer can calculate in milliseconds which question next would yield the highest information gain. Without computers this would be unthinkable.</p>
+
+        <p>CAT has been used in educational research since the 1970s. Well-known applications include the <strong>GMAT</strong> (Graduate Management Admission Test), the <strong>GRE</strong> (Graduate Record Examinations), and the <strong>TOEFL</strong> (Test of English as a Foreign Language). Traitora brings this technology to the field of personality psychology.</p>
+
+        <h2>How Well Does IRT Work for Personality Tests?</h2>
+        <p>IRT was originally developed for achievement tests (e.g. school exams), where there are correct and incorrect answers. In personality tests there are no "correct" answers – every answer reveals something about the respondent's personality.</p>
+
+        <p>For this purpose Traitora uses the <strong>Polytomous IRT model</strong> (specifically the Graded Response Model), which is suited for multiple response categories with no clear "correctness". Each answer option carries weightings for different traits, and the system calculates which trait constellation most likely matches your overall answer pattern.</p>
+
+        <h2>Fairness and Comparability</h2>
+        <p>An important advantage of IRT is <strong>fairness across different groups</strong>. Because IRT-based tests account for individual item parameters, results from different people can be compared directly – even if they did not answer the same questions. This is not possible in classical test theory.</p>
+
+        <p>This principle is called <strong>Measurement Invariance</strong>: the underlying trait values can be compared across different groups without distortion from different question sets.</p>
+
+        <div class="info-box">
+            <p>🔬 <strong>Scientific background:</strong> IRT traces back to work by Georg Rasch (1960) and Frederic Lord (1952). The now most widely used 3-parameter model was formalised by Lord and Novick (1968). Modern applications use Bayesian extensions for even more robust estimates.</p>
+        </div>
+
+        <div class="related-links">
+            <h3>Related Topics</h3>
+            <ul>
+                <li><a href="how-it-works.html">→ How does Traitora's adaptive algorithm work?</a></li>
+                <li><a href="traits-explained.html">→ What do the traits measure – and what do they mean?</a></li>
+                <li><a href="personality-test-comparison.html">→ Traitora vs. MBTI, Big Five &amp; more</a></li>
+                <li><a href="faq.html">→ Frequently asked questions about the test</a></li>
+                <li><a href="index.html">→ Start the adaptive personality test now</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Take the Test</a>
+            <span class="footer-separator">·</span>
+            <a href="about-traitora.html">About Us</a>
+            <span class="footer-separator">·</span>
+            <a href="faq.html">FAQ</a>
+            <span class="footer-separator">·</span>
+            <a href="../impressum.html">Imprint</a>
+            <span class="footer-separator">·</span>
+            <a href="../datenschutz.html">Privacy</a>
+        </div>
+        <div class="footer-copyright">
+            <p class="copyright">© Traitora 2026 · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+        </div>
+    </footer>
+</body>
+</html>

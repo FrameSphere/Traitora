@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ – Questions fréquemment posées sur le test de personnalité | Traitora</title>
+    <meta name="description" content="Questions fréquentes sur Traitora : Comment fonctionne le test ? Que signifient les résultats ? Combien de temps ça prend ? Toutes les réponses dans la FAQ.">
+    <link rel="canonical" href="https://traitora.pages.dev/fr/faq.html">
+    <link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/faq.html">
+    <link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/faq.html">
+    <link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/faq.html">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta property="og:title" content="FAQ – Questions fréquentes | Traitora">
+    <meta property="og:description" content="Toutes les réponses aux questions fréquentes sur Traitora et le test de personnalité adaptatif.">
+    <meta property="og:type" content="webpage">
+    <meta property="og:url" content="https://traitora.pages.dev/fr/faq.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien de temps dure le test Traitora ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Le test dure en moyenne 5 à 10 minutes. Étant adaptatif, il se termine automatiquement une fois qu'une précision suffisante est atteinte – généralement après 15 à 25 questions." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le test est-il gratuit ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, Traitora est entièrement gratuit et ne nécessite ni inscription ni compte." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mes réponses sont-elles stockées ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. Le test s'exécute entièrement dans votre navigateur. Vos réponses ne quittent pas votre appareil et ne sont pas stockées sur nos serveurs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que la Théorie de Réponse aux Items (IRT) ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "L'IRT est une théorie psychométrique qui décrit comment les réponses aux questions de test sont liées aux traits de personnalité sous-jacents. Elle constitue le fondement scientifique des tests adaptatifs." }
+        },
+        {
+          "@type": "Question",
+          "name": "En quoi Traitora diffère-t-il du MBTI ou du Big Five ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Traitora utilise une sélection adaptative des questions (pas d'ensemble fixe de questions), affiche des scores continus plutôt que des types, et montre la précision de mesure par trait. Par rapport au MBTI, il est plus scientifiquement fondé ; par rapport au Big Five, il est plus efficace et adaptatif." }
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <script>(function(){ document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); })();</script>
+    <style>
+        .article-wrap { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+        .article-wrap h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .article-meta { color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 2rem; }
+        .article-wrap h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin: 2.2rem 0 1rem; border-left: 4px solid var(--primary); padding-left: 0.8rem; }
+        .article-wrap p { color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+        .article-wrap strong { color: var(--text-primary); }
+        .faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-question { width: 100%; background: var(--bg-card); border: none; padding: 1rem 1.3rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text-primary); font-size: 0.97rem; font-weight: 600; text-align: left; transition: background 0.2s; gap: 1rem; }
+        .faq-question:hover { background: rgba(99,102,241,0.08); }
+        .faq-question svg { flex-shrink: 0; color: var(--primary); transition: transform 0.3s; }
+        .faq-question[aria-expanded="true"] svg { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; padding: 0 1.3rem; background: var(--bg-secondary); }
+        .faq-answer.open { max-height: 400px; padding: 0.9rem 1.3rem 1.1rem; }
+        .faq-answer p { margin: 0; color: var(--text-secondary); font-size: 0.93rem; line-height: 1.75; }
+        .faq-answer p + p { margin-top: 0.6rem; }
+        .faq-answer ul { margin: 0.5rem 0 0 1.2rem; padding: 0; }
+        .faq-answer li { color: var(--text-secondary); font-size: 0.93rem; line-height: 1.75; margin-bottom: 0.3rem; }
+        .faq-answer a { color: var(--primary); }
+        .back-nav { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.93rem; margin-bottom: 2rem; }
+        .back-nav:hover { opacity: 0.75; }
+        .cta-box { background: var(--accent-gradient); border-radius: 16px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .cta-box h3 { color: #fff; margin: 0 0 0.7rem; font-size: 1.2rem; }
+        .cta-box p { color: rgba(255,255,255,0.85); margin: 0 0 1.2rem; font-size: 0.95rem; }
+        .cta-box a { display: inline-block; background: #fff; color: var(--primary); font-weight: 700; text-decoration: none; padding: 0.75rem 2rem; border-radius: 10px; font-size: 0.95rem; }
+        .cta-box a:hover { opacity: 0.9; }
+        .related-links { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; margin-top: 2rem; }
+        .related-links h3 { font-size: 1rem; margin: 0 0 1rem; color: var(--text-primary); }
+        .related-links ul { list-style: none; margin: 0; padding: 0; }
+        .related-links li { margin-bottom: 0.5rem; }
+        .related-links a { color: var(--primary); text-decoration: none; font-size: 0.93rem; font-weight: 500; }
+        .related-links a:hover { text-decoration: underline; }
+        .top-nav { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .top-nav-brand { font-weight: 800; font-size: 1.1rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .top-nav-links { display: flex; gap: 1.5rem; }
+        .top-nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .top-nav-links a:hover { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="top-nav-brand">Traitora</a>
+        <div class="top-nav-links">
+            <a href="index.html">Faire le test</a>
+            <a href="a-propos-de-traitora.html">À propos</a>
+            <a href="../impressum.html">Mentions légales</a>
+        </div>
+    </nav>
+
+    <main class="article-wrap">
+        <a href="index.html" class="back-nav">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Retour au test
+        </a>
+
+        <h1>Questions Fréquemment Posées (FAQ)</h1>
+        <p class="article-meta">Tout ce que vous devez savoir sur Traitora et le test de personnalité adaptatif</p>
+
+        <h2>Sur le test</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Combien de temps dure le test Traitora ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Le test dure en moyenne <strong>5 à 10 minutes</strong>. Étant adaptatif, Traitora se termine automatiquement dès qu'une précision de mesure suffisante est atteinte. Cela représente généralement 15 à 25 questions – bien moins que les 60 à 240 questions des tests de personnalité classiques.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Le test est-il gratuit ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Oui, <strong>Traitora est entièrement gratuit</strong>. Il n'y a pas de coûts cachés, pas de version premium et pas de paywall avant vos résultats. Le test est financé par la publicité Google AdSense – via les annonces que vous voyez sur la page.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Dois-je m'inscrire ou créer un compte ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Non.</strong> Traitora ne nécessite ni inscription, ni adresse e-mail, ni compte. Vous pouvez commencer le test immédiatement – anonymement et sans compte.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Dans quelles langues le test est-il disponible ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Traitora est actuellement disponible en <strong>quatre langues</strong> : allemand, anglais, français et espagnol. Toutes les questions et réponses ont été développées dans chaque langue – pas simplement traduites par machine. Vous changez la langue via le sélecteur en haut à gauche de la page d'accueil.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Puis-je passer le test plusieurs fois ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Oui, vous pouvez répéter le test autant de fois que vous le souhaitez. Comme l'algorithme est adaptatif et peut sélectionner des questions différentes à chaque fois, les résultats peuvent varier légèrement – surtout si vous êtes dans un état d'esprit différent ou si vous répondez à certaines questions plus honnêtement.</p>
+                <p>Si vos résultats diffèrent significativement entre deux sessions, cela peut indiquer que vos réponses sont fortement dépendantes de l'humeur, ou que vous évaluez certains traits différemment selon votre état.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Pourquoi le test se termine-t-il après un nombre différent de questions à chaque fois ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>C'est le principe fondamental du test adaptatif : si vos réponses sont très claires et cohérentes, l'algorithme atteint rapidement une haute précision de mesure – et le test est plus court. Si vos réponses envoient des signaux mixtes ou que de nombreux traits se situent dans la plage médiane, l'algorithme a besoin de plus de questions pour résoudre les incertitudes.</p>
+            </div>
+        </div>
+
+        <h2>Sur vos résultats</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Que signifient les pourcentages dans mon résultat ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Le pourcentage pour chaque trait indique dans quelle mesure <strong>ce trait est prononcé chez vous</strong>. 0 % signifie très faible, 100 % très élevé. La plupart des gens se situent dans la fourchette moyenne (30 à 70 %) pour la plupart des traits.</p>
+                <p>Vous voyez également une <strong>précision de mesure</strong> – celle-ci indique dans quelle mesure l'algorithme est certain de cette valeur. Une haute précision signifie que vos réponses ont envoyé des signaux très clairs et cohérents pour ce trait.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Y a-t-il des « bons » et des « mauvais » traits ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Non.</strong> Tous les traits sont contextuels. Une forte impulsivité peut être un avantage dans les professions créatives et un défi dans les rôles critiques pour la sécurité. Une faible prise de risque peut être une bénédiction pour un comptable et un obstacle pour un entrepreneur.</p>
+                <p>Considérez votre profil comme une description objective de votre personnalité – pas comme une évaluation. Il n'y a pas de profil « parfait ».</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Quelle est la fiabilité des résultats ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>La précision dépend du nombre de questions répondues et de la cohérence de vos réponses. En général : <strong>plus vos réponses sont claires et cohérentes</strong>, plus le résultat est précis. Un test adaptatif basé sur l'IRT est plus précis qu'un test classique avec le même nombre de questions.</p>
+                <p>Gardez à l'esprit : aucun test de personnalité – aussi bon soit-il – ne peut saisir toute la complexité d'une personnalité humaine. Traitez le résultat comme une <strong>approximation utile</strong>, pas comme une vérité absolue.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Puis-je partager ou sauvegarder mon résultat ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Il n'y a pas encore de fonction de partage intégrée. Vous pouvez faire une capture d'écran de votre résultat. Le résultat n'est pas sauvegardé – si vous quittez la page ou la rafraîchissez, il disparaît. <strong>Faites une capture d'écran</strong> avant de quitter la page !</p>
+            </div>
+        </div>
+
+        <h2>Sur la confidentialité &amp; la technologie</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Mes réponses sont-elles stockées ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p><strong>Non.</strong> L'ensemble du test s'exécute dans votre navigateur (côté client). Vos réponses ne sont pas envoyées à nos serveurs, pas stockées et pas analysées. Nous ne savons pas qui vous êtes ni ce que vous avez répondu.</p>
+                <p>Les seules choses stockées localement dans votre navigateur (localStorage) sont votre préférence de langue et de thème – pas de réponses ni de résultats.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Pourquoi vois-je des publicités ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Traitora est gratuit – le développement et le fonctionnement sont financés par la <strong>publicité Google AdSense</strong>. Nous n'avons aucune influence sur le contenu des publicités affichées. Les politiques de confidentialité propres à Google s'appliquent pour la diffusion des annonces.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Qu'est-ce que la Théorie de Réponse aux Items (IRT) ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>L'IRT est une <strong>théorie psychométrique</strong> qui décrit comment la réponse d'une personne à une question est liée à son trait de personnalité sous-jacent. Chaque question possède des paramètres comme la difficulté et la discrimination, qui déterminent la quantité d'informations qu'elle fournit.</p>
+                <p>Traitora utilise l'IRT pour calculer après chaque réponse quelle question suivante apporterait le gain d'information le plus élevé. Plus de détails sur notre <a href="irt-explique.html">page d'explication de l'IRT</a>.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                Le test fonctionne-t-il sur mobile ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Oui, Traitora est entièrement <strong>optimisé pour le mobile</strong> et fonctionne aussi bien sur les smartphones et les tablettes que sur les ordinateurs de bureau. Aucune installation d'application n'est requise – le test s'exécute directement dans votre navigateur.</p>
+            </div>
+        </div>
+
+        <h2>Sur la psychologie de la personnalité</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                La personnalité est-elle vraiment mesurable ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Oui – avec une réserve importante. Les traits de personnalité sont des <strong>construits latents</strong> : ils ne peuvent pas être observés directement, mais peuvent être déduits par l'observation systématique des comportements et des préférences. C'est le principe derrière tous les tests de personnalité.</p>
+                <p>Aucun test ne mesure la personnalité parfaitement – mais un bon test adaptatif comme Traitora peut fournir des estimations étonnamment précises lorsque les questions sont soigneusement construites.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                La personnalité change-t-elle avec le temps ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Oui et non. La recherche montre que les traits de personnalité sont <strong>très stables sur de courtes périodes</strong>, mais peuvent changer lentement sur des décennies – notamment à travers des événements de vie importants, des expériences et un développement personnel délibéré.</p>
+                <p>Le comportement quotidien varie selon l'humeur et le contexte – mais ce n'est pas un changement de personnalité en soi, simplement l'expérience humaine normale. Si vous faites Traitora aujourd'hui et dans trois ans, vous obtiendrez des résultats similaires mais pas identiques.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+                En quoi Traitora diffère-t-il du MBTI ou du Big Five ?
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                <p>Oui, de plusieurs façons importantes. Traitora utilise une <strong>sélection adaptative des questions</strong> (pas d'ensemble fixe), affiche des <strong>scores continus plutôt que des types</strong>, et montre la <strong>précision de mesure par trait</strong>. Par rapport au MBTI, il est plus scientifiquement fondé ; par rapport au Big Five, il est plus efficace et adaptatif.</p>
+                <p>Plus de détails sur notre <a href="comparaison-tests.html">page de comparaison</a>.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>D'autres questions ? Commencez simplement le test !</h3>
+            <p>Apprenez-en plus sur votre personnalité – gratuitement, en 5 à 10 minutes.</p>
+            <a href="index.html">Commencer le test →</a>
+        </div>
+
+        <div class="related-links">
+            <h3>Pages connexes</h3>
+            <ul>
+                <li><a href="comment-ca-marche.html">→ Comment fonctionne l'algorithme adaptatif ?</a></li>
+                <li><a href="irt-explique.html">→ La Théorie de Réponse aux Items expliquée simplement</a></li>
+                <li><a href="traits-expliques.html">→ Que signifient mes traits ?</a></li>
+                <li><a href="comparaison-tests.html">→ Traitora vs. MBTI vs. Big Five</a></li>
+                <li><a href="a-propos-de-traitora.html">→ À propos de Traitora</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Faire le test</a>
+            <span class="footer-separator">·</span>
+            <a href="a-propos-de-traitora.html">À propos</a>
+            <span class="footer-separator">·</span>
+            <a href="../impressum.html">Mentions légales</a>
+            <span class="footer-separator">·</span>
+            <a href="../datenschutz.html">Confidentialité</a>
+        </div>
+        <div class="footer-copyright">
+            <p class="copyright">© Traitora 2026 · powered by <a href="https://frame-sphere.vercel.app" class="footer-link">FrameSphere</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', !isOpen);
+            answer.classList.toggle('open', !isOpen);
+        }
+    </script>
+</body>
+</html>
