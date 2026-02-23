@@ -303,7 +303,34 @@ function showResults() {
   // Add interpretation
   const interpretation = adaptiveEngine.generateInterpretation(currentLanguage);
   document.getElementById('profileInterpretation').textContent = interpretation;
-  
+
+  // Add personality types link
+  const typesPages = {
+    de: 'persoenlichkeitstypen.html',
+    en: 'personality-types.html',
+    fr: 'types-de-personnalite.html',
+    es: 'tipos-de-personalidad.html'
+  };
+  const typesLabels = {
+    de: '🧠 Was bedeutet mein Persönlichkeitstyp?',
+    en: '🧠 What does my personality type mean?',
+    fr: '🧠 Que signifie mon type de personnalité ?',
+    es: '🧠 ¿Qué significa mi tipo de personalidad?'
+  };
+  const typesLink = typesPages[currentLanguage] || typesPages.de;
+  const typesLabel = typesLabels[currentLanguage] || typesLabels.de;
+
+  const existingTypesLink = document.getElementById('result-types-link');
+  if (existingTypesLink) existingTypesLink.remove();
+
+  const typesBox = document.createElement('div');
+  typesBox.id = 'result-types-link';
+  typesBox.style.cssText = 'margin: 1.2rem 0 0; text-align: center;';
+  typesBox.innerHTML = `<a href="${typesLink}" style="display:inline-block; background: var(--accent-gradient); color:#fff; font-weight:700; text-decoration:none; padding:0.8rem 1.8rem; border-radius:12px; font-size:0.97rem; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">${typesLabel}</a>`;
+
+  const resultActions = document.querySelector('.result-actions');
+  if (resultActions) resultActions.after(typesBox);
+
   // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -318,5 +345,7 @@ function restartTest() {
   currentQuestion = null;
   questionCount = 0;
   questionHistory = [];  // Reset history
+  const typesLink = document.getElementById('result-types-link');
+  if (typesLink) typesLink.remove();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
