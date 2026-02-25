@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <!-- Root – redirects to /de/ -->
     <url>
@@ -12,7 +12,7 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/" />
         <xhtml:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/en/" />
     </url>
 
     <!-- German -->
@@ -25,7 +25,7 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/" />
         <xhtml:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/en/" />
     </url>
 
     <!-- English -->
@@ -38,7 +38,7 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/" />
         <xhtml:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/en/" />
     </url>
 
     <!-- French -->
@@ -51,7 +51,7 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/" />
         <xhtml:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/en/" />
     </url>
 
     <!-- Spanish -->
@@ -64,7 +64,371 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/" />
         <xhtml:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/" />
         <xhtml:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/de/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/en/" />
+    </url>
+
+    <!--About Traitora DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/about-traitora.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/sobre-traitora.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/a-propos-de-traitora.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--About Traitora EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/about-traitora.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/sobre-traitora.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/a-propos-de-traitora.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--About Traitora ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/sobre-traitora.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/sobre-traitora.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/a-propos-de-traitora.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--About Traitora FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/a-propos-de-traitora.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/about-traitora.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/sobre-traitora.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/a-propos-de-traitora.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--FAQ DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/faq.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/faq.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/faq.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/faq.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/faq.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--FAQ EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/faq.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/faq.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/faq.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/faq.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/faq.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--FAQ ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/faq.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/faq.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/faq.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/faq.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/faq.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--FAQ FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/faq.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/faq.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/faq.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/faq.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/faq.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--irt erklärt DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/irt-erklaert.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/irt-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/irt-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/irt-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/irt-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--irt erklärt EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/irt-explained.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/irt-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/irt-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/irt-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/irt-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--irt erklärt ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/irt-explicados.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/irt-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/irt-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/irt-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/irt-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--irt erklärt FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/irt-expliques.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/irt-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/irt-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/irt-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/irt-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstest Vergleich DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/persoenlichkeitstest-vergleich.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstest-vergleich.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-test-comparison.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/comparacion-tests.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comparaison-test.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstest Vergleich EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/personality-test-comparison.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstest-vergleich.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-test-comparison.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/comparacion-tests.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comparaison-test.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstest Vergleich ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/comparacion-tests.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstest-vergleich.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-test-comparison.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/comparacion-tests.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comparaison-test.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstest Vergleich FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/comparaison-test.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstest-vergleich.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-test-comparison.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/comparacion-tests.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comparaison-test.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstypen DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/persoenlichkeitstypen.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstypen.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-types.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/tipos-de-personalidad.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/types-de-personnalite.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstypen EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/personality-types.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstypen.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-types.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/tipos-de-personalidad.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/types-de-personnalite.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstypen ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/tipos-de-personalidad.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstypen.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-types.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/tipos-de-personalidad.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/types-de-personnalite.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Persönlichkeitstypen FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/types-de-personnalite.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/persoenlichkeitstypen.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/personality-types.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/tipos-de-personalidad.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/types-de-personnalite.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Traits erklärt DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/traits-erklaert.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/traits-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/traits-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/rasgos-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/traits-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Traits erklärt EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/traits-explained.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/traits-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/traits-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/rasgos-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/traits-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Traits erklärt ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/rasgos-explicados.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/traits-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/traits-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/rasgos-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/traits-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Traits erklärt FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/traits-expliques.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/traits-erklaert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/traits-explained.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/rasgos-explicados.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/traits-expliques.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Wie es funktioniert DE-->
+    <url>
+        <loc>https://traitora.pages.dev/de/wie-es-funktioniert.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/wie-es-funktioniert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/how-it-works.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/como-funciona.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comment-ca-marche.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Wie es funktioniert EN-->
+    <url>
+        <loc>https://traitora.pages.dev/en/how-it-works.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/wie-es-funktioniert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/how-it-works.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/como-funciona.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comment-ca-marche.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Wie es funktioniert ES-->
+    <url>
+        <loc>https://traitora.pages.dev/es/como-funciona.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/wie-es-funktioniert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/how-it-works.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/como-funciona.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comment-ca-marche.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
+    </url>
+
+    <!--Wie es funktioniert FR-->
+    <url>
+        <loc>https://traitora.pages.dev/fr/comment-ca-marche.html</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <html:link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/wie-es-funktioniert.html"/>
+        <html:link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/how-it-works.html"/>
+        <html:link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/como-funciona.html"/>
+        <html:link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/comment-ca-marche.html"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://traitora.pages.dev/"/>
     </url>
 
     <!-- Legal Pages -->
