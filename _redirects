@@ -34,6 +34,7 @@
 
 # ---- Blog
 /blog                    /blog.html              200
+/blog/                   /blog.html              200
 
 # ---- Root: redirect to German (always last)
 /                        /de/                    302
