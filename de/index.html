@@ -317,34 +317,6 @@
         </div>
     </section>
 
-    <!-- About Modal -->
-    <div id="aboutModal" class="modal hidden">
-        <div class="modal-overlay" onclick="closeAboutModal()"></div>
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeAboutModal()" aria-label="Schließen">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <h2 class="modal-title">Über Traitora</h2>
-            <div class="about-content">
-                <p><strong>Traitora</strong> ist ein wissenschaftlich fundierter <strong>adaptiver Persönlichkeitstest</strong>,
-                der auf der <strong>Item Response Theory (IRT)</strong> basiert. Anders als statische Tests passt sich
-                Traitora intelligent an deine Antworten an und wählt gezielt die Fragen aus, die den höchsten Informationsgewinn bringen.</p>
-                <h3>Features:</h3>
-                <ul class="about-list">
-                    <li><strong>Adaptive Algorithmen:</strong> Intelligente Fragenauswahl basierend auf IRT</li>
-                    <li><strong>Effizient:</strong> Präzise Ergebnisse in minimaler Zeit</li>
-                    <li><strong>Wissenschaftlich:</strong> Fundiert auf modernen psychometrischen Methoden</li>
-                    <li><strong>Multi-Dimensional:</strong> Messung mehrerer Persönlichkeits-Traits</li>
-                    <li><strong>4 Sprachen:</strong> Deutsch, Englisch, Französisch, Spanisch</li>
-                </ul>
-                <p>Der Test nutzt ein adaptives Verfahren, das ähnlich wie moderne IQ-Tests funktioniert:
-                Je nachdem wie du antwortest, werden die folgenden Fragen angepasst, um dein Profil mit maximaler Genauigkeit zu erfassen.</p>
-            </div>
-        </div>
-    </div>
-
     <!-- ═══════════════════════════════════════════ -->
     <!-- SEO CONTENT SECTIONS                         -->
     <!-- ═══════════════════════════════════════════ -->
@@ -417,6 +389,26 @@
                 <p style="margin-top:0.75rem;">Traitora ist eine <strong>wissenschaftlich fundierte Alternative</strong> zu bekannten Persönlichkeitstests wie MBTI oder klassischen Big-Five-Fragebögen – mit deutlich weniger Fragen und mehr Transparenz über die Messgenauigkeit. Antworten auf häufige Fragen zum Test findest du in unserem <a href="faq.html">FAQ</a>.</p>
             </div>
         </div>
+
+        <!-- Accordion 5: Über Traitora -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                <span>Über Traitora</span>
+                <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="accordion-body">
+                <p><strong>Traitora</strong> ist ein wissenschaftlich fundierter <strong>adaptiver Persönlichkeitstest</strong>, der auf der <strong>Item Response Theory (IRT)</strong> basiert. Anders als statische Tests passt sich Traitora intelligent an deine Antworten an und wählt gezielt die Fragen aus, die den höchsten Informationsgewinn bringen.</p>
+                <p style="margin-top:0.75rem;"><strong>Features:</strong></p>
+                <ul style="margin:0.5rem 0 0 1.2rem;color:var(--text-secondary);line-height:1.75;font-size:0.96rem">
+                    <li><strong>Adaptive Algorithmen:</strong> Intelligente Fragenauswahl basierend auf IRT</li>
+                    <li><strong>Effizient:</strong> Präzise Ergebnisse in minimaler Zeit</li>
+                    <li><strong>Wissenschaftlich:</strong> Fundiert auf modernen psychometrischen Methoden</li>
+                    <li><strong>Multi-Dimensional:</strong> Messung mehrerer Persönlichkeits-Traits</li>
+                    <li><strong>4 Sprachen:</strong> Deutsch, Englisch, Französisch, Spanisch</li>
+                </ul>
+                <p style="margin-top:0.75rem;">Der Test nutzt ein adaptives Verfahren, das ähnlich wie moderne IQ-Tests funktioniert: Je nachdem wie du antwortest, werden die folgenden Fragen angepasst, um dein Profil mit maximaler Genauigkeit zu erfassen.</p>
+            </div>
+        </div>
     </section>
 
     <!-- ── Quick Navigation ── -->
@@ -470,8 +462,6 @@
 
     <footer class="footer">
         <div class="footer-links">
-            <a href="#" onclick="openAboutModal(); return false;">Über Traitora</a>
-            <span class="footer-separator">·</span>
             <a href="about-traitora.html">Über uns</a>
             <span class="footer-separator">·</span>
             <a href="faq.html">FAQ</a>
@@ -510,8 +500,7 @@
             body.classList.toggle('open', !isOpen);
         }
 
-        function openAboutModal() { document.getElementById('aboutModal').classList.remove('hidden'); }
-        function closeAboutModal() { document.getElementById('aboutModal').classList.add('hidden'); }
+
     </script>
 
     <script src="../js/translations.js"></script>
