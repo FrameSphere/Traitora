@@ -179,8 +179,14 @@
 
   // ── Language detection ────────────────────────────────────────────
   function detectLang() {
+    // 1. Referrer: if user came from /en/, /fr/, /es/, /de/ → use that
+    const ref = document.referrer || '';
+    const refMatch = ref.match(/\/([a-z]{2})\//); 
+    if (refMatch && T[refMatch[1]]) return refMatch[1];
+    // 2. localStorage (set when user picks language manually on blog)
     const stored = localStorage.getItem('language');
     if (stored && T[stored]) return stored;
+    // 3. Browser language
     const nav = (navigator.language || '').slice(0, 2).toLowerCase();
     return T[nav] ? nav : 'de';
   }
