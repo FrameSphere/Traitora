@@ -385,7 +385,7 @@ function restartTest() {
   // ── Vorschläge-Modal ───────────────────────────────────────
   const SUGG_LS_KEY = 'hq_sugg_ts_traitora';
   const SUGG_LIMIT  = 3;
-  const SUGG_WINDOW = 60 * 60 * 1000; // 1 Stunde
+  const SUGG_WINDOW = 5 * 60 * 1000; // 5 Minuten
 
   function getSuggTimestamps() {
     try { return JSON.parse(localStorage.getItem(SUGG_LS_KEY) || '[]'); }
