@@ -4,127 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Traitora</title>
-  <meta name="description" content="Artikel über Persönlichkeitspsychologie, Traits und adaptives Testing von Traitora.">
-
+  <meta name="description" content="Articles on personality psychology, traits and adaptive testing by Traitora.">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-
   <style>
     :root {
       --bg-primary: #0f0f1e;
       --bg-secondary: #1a1a2e;
-      --bg-tertiary: #252542;
       --text-primary: #e4e4e7;
       --text-secondary: #a1a1aa;
-      --accent-primary: #8b5cf6;
-      --accent-secondary: #6366f1;
+      --accent: #8b5cf6;
       --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-      --border-color: rgba(139,92,246,0.2);
+      --border: rgba(139,92,246,0.2);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      min-height: 100vh;
-    }
-    header {
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-decoration: none;
-    }
-    header a.back {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color .2s;
-    }
-    header a.back:hover { color: var(--accent-primary); }
-    .hero {
-      text-align: center;
-      padding: 56px 24px 36px;
-      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    }
-    .hero h1 {
-      font-size: 36px;
-      font-weight: 800;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+
+    /* ── Header ── */
+    header { background: var(--bg-secondary); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 22px; font-weight: 800; color: #8b5cf6; text-decoration: none; letter-spacing: -.3px; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .back-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .back-link:hover { color: var(--accent); }
+    .lang-select { background: transparent; border: 1px solid var(--border); color: var(--text-secondary); padding: 4px 8px; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+    .lang-select option { background: #1a1a2e; }
+
+    /* ── Hero ── */
+    .hero { text-align: center; padding: 52px 24px 32px; background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); }
+    .hero h1 { font-size: 34px; font-weight: 800; color: #8b5cf6; margin-bottom: 8px; }
     .hero p { color: var(--text-secondary); font-size: 16px; }
-    .filters {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 16px 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .filter-btn {
-      padding: 7px 18px;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      font-size: 13px;
-      cursor: pointer;
-      transition: all .2s;
-      font-family: inherit;
-    }
-    .filter-btn:hover { border-color: var(--accent-primary); color: var(--text-primary); }
-    .filter-btn.active { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+
+    /* ── Filters ── */
+    .filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 16px 24px; max-width: 900px; margin: 0 auto; }
+    .filter-btn { padding: 7px 18px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all .2s; font-family: inherit; }
+    .filter-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+    .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── Main ── */
     main { max-width: 900px; margin: 0 auto; padding: 24px; }
-    #blog-loading, #blog-error, #blog-empty {
-      text-align: center;
-      padding: 64px 24px;
-      color: var(--text-secondary);
-      font-size: 15px;
-    }
+    #blog-loading, #blog-error, #blog-empty { text-align: center; padding: 64px 24px; color: var(--text-secondary); font-size: 15px; }
     .posts-grid { display: flex; flex-direction: column; gap: 20px; }
-    .post-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 24px 28px;
-      transition: border-color .2s, transform .2s;
-      cursor: pointer;
-    }
-    .post-card:hover { border-color: var(--accent-primary); transform: translateY(-2px); }
-    .post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    .post-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 24px 28px; transition: border-color .2s, transform .2s; cursor: pointer; }
+    .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
     .post-tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: rgba(139,92,246,.18); color: #c084fc; }
     .post-date { font-size: 12px; color: var(--text-secondary); }
-    .post-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); line-height: 1.35; }
+    .post-title { font-size: 20px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
     .post-excerpt { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+    /* ── Post overlay ── */
     .post-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 1000; overflow-y: auto; padding: 24px; }
     .post-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
-    .post-full { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; max-width: 720px; width: 100%; padding: 36px 40px; margin: auto; position: relative; }
+    .post-full { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; max-width: 720px; width: 100%; padding: 36px 40px; margin: auto; position: relative; }
     .post-full-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-secondary); font-size: 22px; cursor: pointer; line-height: 1; }
     .post-full-close:hover { color: var(--text-primary); }
     .post-full h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
-    .post-full .post-body { font-size: 15px; line-height: 1.75; color: var(--text-secondary); margin-top: 20px; }
-    .post-full .post-body p { margin-bottom: 14px; }
-    .post-full .post-body h2, .post-full .post-body h3 { color: var(--text-primary); margin: 20px 0 8px; }
-    .post-full .post-body ul, .post-full .post-body ol { padding-left: 22px; margin-bottom: 14px; }
-    .post-full .post-body li { margin-bottom: 6px; }
-    footer { text-align: center; padding: 32px 24px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border-color); margin-top: 48px; }
+    .post-body { font-size: 15px; line-height: 1.75; color: var(--text-secondary); margin-top: 20px; }
+    .post-body p { margin-bottom: 14px; }
+    .post-body h2, .post-body h3 { color: var(--text-primary); margin: 20px 0 8px; }
+    .post-body ul, .post-body ol { padding-left: 22px; margin-bottom: 14px; }
+    .post-body li { margin-bottom: 6px; }
+
+    /* ── Footer ── */
+    footer { text-align: center; padding: 32px 24px; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--border); margin-top: 48px; }
     footer a { color: var(--text-secondary); text-decoration: none; }
-    footer a:hover { color: var(--accent-primary); }
+    footer a:hover { color: var(--accent); }
     footer .sep { margin: 0 8px; }
   </style>
 </head>
@@ -132,61 +76,168 @@
 
 <header>
   <a href="/de/" class="logo">Traitora</a>
-  <a href="/de/" class="back">← Zum Test</a>
+  <div class="header-right">
+    <select class="lang-select" id="langSelect" onchange="setLang(this.value)">
+      <option value="de">🇩🇪 DE</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="es">🇪🇸 ES</option>
+    </select>
+    <a href="/de/" class="back-link" id="back-link">← Zum Test</a>
+  </div>
 </header>
 
 <div class="hero">
   <h1>📝 Blog</h1>
-  <p>Artikel über Persönlichkeitspsychologie, Traits und adaptives Testing</p>
+  <p id="hero-sub">Artikel über Persönlichkeitspsychologie, Traits und adaptives Testing</p>
 </div>
 
 <div class="filters" id="filters">
-  <button class="filter-btn active" data-tag="all">Alle</button>
+  <button class="filter-btn active" data-tag="all" id="filter-all">Alle</button>
 </div>
 
 <main>
   <div id="blog-loading">Lädt Artikel…</div>
-  <div id="blog-error"   style="display:none">Fehler beim Laden. Bitte später versuchen.</div>
-  <div id="blog-empty"   style="display:none">Noch keine Artikel veröffentlicht – komm bald wieder!</div>
+  <div id="blog-error"   style="display:none"></div>
+  <div id="blog-empty"   style="display:none"></div>
   <div id="posts-grid"   class="posts-grid" style="display:none"></div>
 </main>
 
 <div class="post-overlay" id="postOverlay">
-  <div class="post-full" id="postFull">
-    <button class="post-full-close" onclick="closePost()">✕</button>
+  <div class="post-full">
+    <button class="post-full-close" id="post-close">✕</button>
     <div id="postFullContent"></div>
   </div>
 </div>
 
 <footer>
-  <a href="/impressum.html">Impressum</a>
+  <a href="/impressum.html" id="footer-impressum">Impressum</a>
   <span class="sep">·</span>
-  <a href="/datenschutz.html">Datenschutz</a>
+  <a href="/datenschutz.html" id="footer-privacy">Datenschutz</a>
   <span class="sep">·</span>
-  <a href="/de/">Traitora</a>
+  <a href="/de/" id="footer-home">Traitora</a>
   <p style="margin-top:12px">© 2026 Traitora · powered by <a href="https://frame-sphere.vercel.app">FrameSphere</a></p>
 </footer>
 
 <script>
 (function () {
-  const HQ_API = 'https://webcontrol-hq-api.karol-paschek.workers.dev';
-  const SITE_ID = 'traitora';
+  // ── Translations ──────────────────────────────────────────────────
+  const T = {
+    de: {
+      backLink:     '← Zum Test',
+      heroSub:      'Artikel über Persönlichkeitspsychologie, Traits und adaptives Testing',
+      filterAll:    'Alle',
+      loading:      'Lädt Artikel…',
+      error:        'Fehler beim Laden. Bitte später versuchen.',
+      empty:        'Noch keine Artikel veröffentlicht – komm bald wieder!',
+      impressum:    'Impressum',
+      privacy:      'Datenschutz',
+      homeLink:     'Zum Test',
+      noContent:    'Kein Inhalt verfügbar.',
+      testHome:     '/de/',
+    },
+    en: {
+      backLink:     '← Back to Test',
+      heroSub:      'Articles on personality psychology, traits and adaptive testing',
+      filterAll:    'All',
+      loading:      'Loading articles…',
+      error:        'Failed to load. Please try again later.',
+      empty:        'No articles published yet – check back soon!',
+      impressum:    'Imprint',
+      privacy:      'Privacy',
+      homeLink:     'Back to Test',
+      noContent:    'No content available.',
+      testHome:     '/en/',
+    },
+    fr: {
+      backLink:     '← Retour au test',
+      heroSub:      'Articles sur la psychologie de la personnalité, les traits et les tests adaptatifs',
+      filterAll:    'Tous',
+      loading:      'Chargement des articles…',
+      error:        'Échec du chargement. Veuillez réessayer plus tard.',
+      empty:        'Aucun article publié pour l\'instant – revenez bientôt !',
+      impressum:    'Mentions légales',
+      privacy:      'Confidentialité',
+      homeLink:     'Retour au test',
+      noContent:    'Aucun contenu disponible.',
+      testHome:     '/fr/',
+    },
+    es: {
+      backLink:     '← Volver al test',
+      heroSub:      'Artículos sobre psicología de la personalidad, rasgos y tests adaptativos',
+      filterAll:    'Todos',
+      loading:      'Cargando artículos…',
+      error:        'Error al cargar. Por favor, inténtalo más tarde.',
+      empty:        'Aún no hay artículos publicados – ¡vuelve pronto!',
+      impressum:    'Aviso legal',
+      privacy:      'Privacidad',
+      homeLink:     'Volver al test',
+      noContent:    'Contenido no disponible.',
+      testHome:     '/es/',
+    },
+  };
+
+  // ── Language detection ────────────────────────────────────────────
+  function detectLang() {
+    const stored = localStorage.getItem('language');
+    if (stored && T[stored]) return stored;
+    const nav = (navigator.language || '').slice(0, 2).toLowerCase();
+    return T[nav] ? nav : 'de';
+  }
+
+  let lang = detectLang();
   let allPosts = [];
+  let activeTag = 'all';
 
+  function applyTranslations() {
+    const t = T[lang];
+    document.documentElement.lang = lang;
+    document.getElementById('back-link').textContent = t.backLink;
+    document.getElementById('back-link').href = t.testHome;
+    document.getElementById('hero-sub').textContent = t.heroSub;
+    document.getElementById('filter-all').textContent = t.filterAll;
+    document.getElementById('blog-loading').textContent = t.loading;
+    document.getElementById('blog-error').textContent = t.error;
+    document.getElementById('blog-empty').textContent = t.empty;
+    document.getElementById('footer-impressum').textContent = t.impressum;
+    document.getElementById('footer-privacy').textContent = t.privacy;
+    document.getElementById('footer-home').href = t.testHome;
+    document.getElementById('langSelect').value = lang;
+    // Update dynamic tag filter buttons (not "all")
+    document.querySelectorAll('.filter-btn[data-tag]:not([data-tag="all"])').forEach(b => {
+      // tag buttons stay as-is (tag names are neutral)
+    });
+  }
+
+  window.setLang = function(l) {
+    if (!T[l]) return;
+    lang = l;
+    localStorage.setItem('language', l);
+    applyTranslations();
+    // Re-render posts to pick up noContent translation
+    renderPosts(activeTag);
+  };
+
+  // ── Helpers ───────────────────────────────────────────────────────
   function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function fmtDate(d) { return new Date(d).toLocaleDateString('de-DE',{year:'numeric',month:'long',day:'numeric'}); }
+  function fmtDate(d) {
+    const locales = { de:'de-DE', en:'en-GB', fr:'fr-FR', es:'es-ES' };
+    return new Date(d).toLocaleDateString(locales[lang]||'en-GB', {year:'numeric',month:'long',day:'numeric'});
+  }
 
+  // ── Render ────────────────────────────────────────────────────────
   function renderPosts(tag) {
-    const grid = document.getElementById('posts-grid');
+    activeTag = tag;
+    const grid  = document.getElementById('posts-grid');
     const empty = document.getElementById('blog-empty');
     const filtered = tag === 'all' ? allPosts : allPosts.filter(p => p.tags && p.tags.includes(tag));
     if (!filtered.length) { grid.style.display='none'; empty.style.display=''; return; }
     empty.style.display = 'none';
-    grid.style.display = '';
+    grid.style.display  = '';
     grid.innerHTML = filtered.map(p => `
       <div class="post-card" onclick="openPost(${p.id})">
         <div class="post-meta">
-          ${p.tags ? p.tags.split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="post-tag">${esc(t)}</span>`).join('') : ''}
+          ${(p.tags||'').split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="post-tag">${esc(t)}</span>`).join('')}
           <span class="post-date">${fmtDate(p.created_at)}</span>
         </div>
         <div class="post-title">${esc(p.title)}</div>
@@ -194,55 +245,63 @@
       </div>`).join('');
   }
 
-  function buildFilters() {
+  function buildTagFilters() {
     const tagSet = new Set();
-    allPosts.forEach(p => { if (p.tags) p.tags.split(',').forEach(t => { const s=t.trim(); if(s) tagSet.add(s); }); });
+    allPosts.forEach(p => { (p.tags||'').split(',').forEach(t => { const s=t.trim(); if(s) tagSet.add(s); }); });
     const container = document.getElementById('filters');
+    // Remove old dynamic buttons
+    container.querySelectorAll('.filter-btn:not([data-tag="all"])').forEach(b => b.remove());
     tagSet.forEach(tag => {
       const btn = document.createElement('button');
       btn.className = 'filter-btn'; btn.dataset.tag = tag; btn.textContent = tag;
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        container.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active'); renderPosts(tag);
       });
       container.appendChild(btn);
     });
-    document.querySelector('.filter-btn[data-tag="all"]').addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById('filter-all').addEventListener('click', function() {
+      container.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
       this.classList.add('active'); renderPosts('all');
     });
   }
 
+  // ── Post overlay ──────────────────────────────────────────────────
   window.openPost = function(id) {
     const p = allPosts.find(x=>x.id===id); if (!p) return;
-    const tags = p.tags ? p.tags.split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="post-tag">${esc(t)}</span>`).join('') : '';
+    const tags = (p.tags||'').split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="post-tag">${esc(t)}</span>`).join('');
+    const noContent = T[lang].noContent;
     document.getElementById('postFullContent').innerHTML = `
       <div class="post-meta">${tags}<span class="post-date">${fmtDate(p.created_at)}</span></div>
       <h2>${esc(p.title)}</h2>
-      <div class="post-body">${p.content||(p.excerpt?`<p>${esc(p.excerpt)}</p>`:'<p>Kein Inhalt verfügbar.</p>')}</div>`;
+      <div class="post-body">${p.content||(p.excerpt?`<p>${esc(p.excerpt)}</p>`:`<p>${noContent}</p>`)}</div>`;
     document.getElementById('postOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   };
-  window.closePost = function() {
-    document.getElementById('postOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  };
-  document.getElementById('postOverlay').addEventListener('click', e => { if(e.target===document.getElementById('postOverlay')) window.closePost(); });
-  document.addEventListener('keydown', e => { if(e.key==='Escape') window.closePost(); });
 
+  document.getElementById('post-close').addEventListener('click', closePost);
+  document.getElementById('postOverlay').addEventListener('click', function(e) { if(e.target===this) closePost(); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closePost(); });
+  function closePost() { document.getElementById('postOverlay').classList.remove('open'); document.body.style.overflow=''; }
+
+  // ── Load posts ────────────────────────────────────────────────────
   async function loadPosts() {
     try {
-      const res = await fetch(`${HQ_API}/api/blog/published?site_id=${SITE_ID}`);
+      const res = await fetch('https://webcontrol-hq-api.karol-paschek.workers.dev/api/blog/published?site_id=traitora');
       if (!res.ok) throw new Error('HTTP '+res.status);
       allPosts = await res.json();
       document.getElementById('blog-loading').style.display = 'none';
       if (!allPosts.length) { document.getElementById('blog-empty').style.display=''; return; }
-      buildFilters(); renderPosts('all');
+      buildTagFilters();
+      renderPosts('all');
     } catch(e) {
       document.getElementById('blog-loading').style.display = 'none';
       document.getElementById('blog-error').style.display = '';
     }
   }
+
+  // ── Init ──────────────────────────────────────────────────────────
+  applyTranslations();
   loadPosts();
 })();
 </script>
