@@ -92,7 +92,6 @@ function renderHTML(post, lang, m) {
 
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3654554314003005" crossorigin="anonymous"></script>
   <script>(function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 
   <style>
@@ -116,7 +115,7 @@ function renderHTML(post, lang, m) {
     .blog-post-body a { color: var(--primary, #8b5cf6); }
     .blog-post-body hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     .blog-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-    .ad-slot { margin: 2rem 0; text-align: center; min-height: 90px; }
+
     .blog-back-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 2.5rem;
       padding: 10px 20px; border-radius: 8px; background: rgba(139,92,246,.12); color: var(--primary, #8b5cf6);
       text-decoration: none; font-weight: 600; font-size: 14px; transition: background .2s; }
@@ -163,12 +162,6 @@ function renderHTML(post, lang, m) {
       ${post.excerpt ? `<p class="blog-post-excerpt" itemprop="description">${esc(post.excerpt)}</p>` : ''}
     </header>
 
-    <div class="ad-slot">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3654554314003005"
-           data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
     <hr class="blog-divider">
 
     <div class="blog-post-body" itemprop="articleBody">
@@ -176,12 +169,6 @@ function renderHTML(post, lang, m) {
     </div>
 
     <hr class="blog-divider">
-
-    <div class="ad-slot">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3654554314003005"
-           data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
 
     <a href="${m.blogHome}" class="blog-back-btn">\u2190 ${m.readMore}</a>
 
@@ -273,7 +260,8 @@ export async function onRequestGet({ params }) {
   return new Response(renderHTML(post, lang, m), {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      // 10min Browser-Cache, 30min CDN — kurz genug dass Status-Änderungen schnell sichtbar sind
+      'Cache-Control': 'public, max-age=600, s-maxage=1800',
     },
   });
 }
