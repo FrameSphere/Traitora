@@ -236,7 +236,9 @@
     activeTag = tag;
     const grid  = document.getElementById('posts-grid');
     const empty = document.getElementById('blog-empty');
-    const filtered = tag === 'all' ? allPosts : allPosts.filter(p => p.tags && p.tags.includes(tag));
+    // Client-side lang filter (works even before server-side filter is deployed)
+    const langPosts = allPosts.filter(p => (p.lang || 'de') === lang);
+    const filtered = tag === 'all' ? langPosts : langPosts.filter(p => p.tags && p.tags.includes(tag));
     if (!filtered.length) { grid.style.display='none'; empty.style.display=''; return; }
     empty.style.display = 'none';
     grid.style.display  = '';
