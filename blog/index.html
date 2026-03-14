@@ -220,8 +220,8 @@
     lang = l;
     localStorage.setItem('language', l);
     applyTranslations();
-    // Re-render posts to pick up noContent translation
-    renderPosts(activeTag);
+    // Re-fetch posts for the new language
+    loadPosts();
   };
 
   // ── Helpers ───────────────────────────────────────────────────────
@@ -292,8 +292,12 @@
 
   // ── Load posts ────────────────────────────────────────────────────
   async function loadPosts() {
+    document.getElementById('blog-loading').style.display = '';
+    document.getElementById('blog-error').style.display   = 'none';
+    document.getElementById('blog-empty').style.display   = 'none';
+    document.getElementById('posts-grid').style.display   = 'none';
     try {
-      const res = await fetch('https://webcontrol-hq-api.karol-paschek.workers.dev/api/blog/published?site_id=traitora');
+      const res = await fetch(`https://webcontrol-hq-api.karol-paschek.workers.dev/api/blog/published?site_id=traitora&lang=${lang}`);
       if (!res.ok) throw new Error('HTTP '+res.status);
       allPosts = await res.json();
       document.getElementById('blog-loading').style.display = 'none';
