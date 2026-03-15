@@ -32,7 +32,7 @@ function esc(s) {
 
 function renderHTML(post, lang, m) {
   const tags = (post.tags || '').split(',').map(t => t.trim()).filter(Boolean);
-  const dateStr = fmtDate(post.created_at, lang);
+  const dateStr = fmtDate(post.published_at || post.created_at, lang);
   const description = post.excerpt || post.title;
   const canonicalUrl = `https://traitora.pages.dev/blog/${lang}/${post.slug}`;
 
@@ -56,7 +56,7 @@ function renderHTML(post, lang, m) {
   <meta property="og:site_name" content="Traitora">
   <meta property="og:locale" content="${m.locale}">
   <meta property="og:image" content="https://traitora.pages.dev/assets/favicon.svg">
-  <meta property="article:published_time" content="${post.created_at}">
+  <meta property="article:published_time" content="${post.published_at || post.created_at}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(post.title)}">
   <meta name="twitter:description" content="${esc(description)}">
@@ -67,8 +67,8 @@ function renderHTML(post, lang, m) {
     "@type": "Article",
     "headline": ${JSON.stringify(post.title)},
     "description": ${JSON.stringify(description)},
-    "datePublished": "${post.created_at}",
-    "dateModified": "${post.created_at}",
+    "datePublished": "${post.published_at || post.created_at}",
+    "dateModified": "${post.published_at || post.created_at}",
     "author": { "@type": "Organization", "name": "Traitora" },
     "publisher": { "@type": "Organization", "name": "Traitora", "url": "https://traitora.pages.dev" },
     "url": "${canonicalUrl}",
@@ -156,7 +156,7 @@ function renderHTML(post, lang, m) {
     <header>
       <div class="blog-post-meta">
         ${tags.map(t => `<a href="${m.blogHome}?tag=${encodeURIComponent(t)}" class="blog-tag">${esc(t)}</a>`).join('')}
-        <time class="blog-post-date" itemprop="datePublished" datetime="${post.created_at}">${dateStr}</time>
+        <time class="blog-post-date" itemprop="datePublished" datetime="${post.published_at || post.created_at}">${dateStr}</time>
       </div>
       <h1 class="blog-post-title" itemprop="headline">${esc(post.title)}</h1>
       ${post.excerpt ? `<p class="blog-post-excerpt" itemprop="description">${esc(post.excerpt)}</p>` : ''}
