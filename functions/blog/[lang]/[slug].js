@@ -30,11 +30,20 @@ function esc(s) {
   return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-function renderHTML(post, lang, m) {
+function renderHTML(post, lang, m, siblings) {
   const tags = (post.tags || '').split(',').map(t => t.trim()).filter(Boolean);
   const dateStr = fmtDate(post.published_at || post.created_at, lang);
   const description = post.excerpt || post.title;
   const canonicalUrl = `https://traitora.pages.dev/blog/${lang}/${post.slug}`;
+  const BASE = 'https://traitora.pages.dev';
+  // hreflang: andere Sprachversionen des gleichen Artikels
+  const hreflangs = siblings.map(s =>
+    `  <link rel="alternate" hreflang="${s.lang}" href="${BASE}/blog/${s.lang}/${s.slug}">`
+  ).join('\n');
+  const enVersion = siblings.find(s => s.lang === 'en');
+  const xDefault = enVersion
+    ? `  <link rel="alternate" hreflang="x-default" href="${BASE}/blog/en/${enVersion.slug}">`
+    : `  <link rel="alternate" hreflang="x-default" href="${BASE}/blog/">`;
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -60,6 +69,8 @@ function renderHTML(post, lang, m) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(post.title)}">
   <meta name="twitter:description" content="${esc(description)}">
+${hreflangs}
+${xDefault}
 
   <script type="application/ld+json">
   {
@@ -257,7 +268,16 @@ export async function onRequestGet({ params }) {
     });
   }
 
-  return new Response(renderHTML(post, lang, m), {
+  // Geschwister-Posts für hreflang laden (parallel, kein Fehler wenn nicht verfügbar)
+  let siblings = [{ lang, slug }];
+  if (post.group_id) {
+    try {
+      const sr = await fetch(`${API}/api/blog/group?site_id=${SITE_ID}&group_id=${encodeURIComponent(post.group_id)}`);
+      if (sr.ok) siblings = await sr.json();
+    } catch(_) {}
+  }
+
+  return new Response(renderHTML(post, lang, m, siblings), {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       // 10min Browser-Cache, 30min CDN — kurz genug dass Status-Änderungen schnell sichtbar sind
