@@ -160,10 +160,6 @@ function renderHTML(post, lang, m, siblings) {
   <title>${esc(post.title)} \u2013 Traitora Blog</title>
   <meta name="description" content="${esc(description)}">
   <link rel="canonical" href="${canonicalUrl}">
-  <link rel="alternate" hreflang="de" href="https://traitora.pages.dev/de/">
-  <link rel="alternate" hreflang="en" href="https://traitora.pages.dev/en/">
-  <link rel="alternate" hreflang="fr" href="https://traitora.pages.dev/fr/">
-  <link rel="alternate" hreflang="es" href="https://traitora.pages.dev/es/">
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="${esc(post.title)}">
