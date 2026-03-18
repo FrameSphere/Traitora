@@ -34,17 +34,18 @@
     .hero h1 { font-size: 34px; font-weight: 800; color: #8b5cf6; margin-bottom: 8px; }
     .hero p { color: var(--text-secondary); font-size: 16px; }
 
-    /* ── Filters ── */
-    .filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 16px 24px; max-width: 900px; margin: 0 auto; }
-    .filter-btn { padding: 7px 18px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all .2s; font-family: inherit; }
-    .filter-btn:hover { border-color: var(--accent); color: var(--text-primary); }
-    .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    /* ── Suche ── */
+    .search-wrap { max-width: 900px; margin: 0 auto; padding: 16px 24px 0; }
+    .search-input { width: 100%; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); font-size: 14px; font-family: inherit; outline: none; box-sizing: border-box; transition: border-color .2s; }
+    .search-input::placeholder { color: var(--text-secondary); }
+    .search-input:focus { border-color: var(--accent); }
 
     /* ── Main ── */
     main { max-width: 900px; margin: 0 auto; padding: 24px; }
     #blog-loading, #blog-error, #blog-empty { text-align: center; padding: 64px 24px; color: var(--text-secondary); font-size: 15px; }
     .posts-grid { display: flex; flex-direction: column; gap: 20px; }
-    .post-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 24px 28px; transition: border-color .2s, transform .2s; cursor: pointer; }
+    .post-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 24px 28px; transition: border-color .2s, transform .2s; cursor: pointer; position: relative; }
+    .new-badge { position: absolute; top: -1px; right: -1px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 0 13px 0 8px; letter-spacing: .05em; line-height: 1.6; box-shadow: 0 2px 6px rgba(139,92,246,0.4); }
     .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
     .post-tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: rgba(139,92,246,.18); color: #c084fc; }
@@ -92,8 +93,8 @@
   <p id="hero-sub">Artikel über Persönlichkeitspsychologie, Traits und adaptives Testing</p>
 </div>
 
-<div class="filters" id="filters">
-  <button class="filter-btn active" data-tag="all" id="filter-all">Alle</button>
+<div class="search-wrap">
+  <input class="search-input" id="blog-search" type="search" placeholder="Artikel suchen…" autocomplete="off">
 </div>
 
 <main>
@@ -126,7 +127,7 @@
     de: {
       backLink:     '← Zum Test',
       heroSub:      'Artikel über Persönlichkeitspsychologie, Traits und adaptives Testing',
-      filterAll:    'Alle',
+      search:       'Artikel suchen…',
       loading:      'Lädt Artikel…',
       error:        'Fehler beim Laden. Bitte später versuchen.',
       empty:        'Noch keine Artikel veröffentlicht – komm bald wieder!',
@@ -139,7 +140,7 @@
     en: {
       backLink:     '← Back to Test',
       heroSub:      'Articles on personality psychology, traits and adaptive testing',
-      filterAll:    'All',
+      search:       'Search articles…',
       loading:      'Loading articles…',
       error:        'Failed to load. Please try again later.',
       empty:        'No articles published yet – check back soon!',
@@ -152,7 +153,7 @@
     fr: {
       backLink:     '← Retour au test',
       heroSub:      'Articles sur la psychologie de la personnalité, les traits et les tests adaptatifs',
-      filterAll:    'Tous',
+      search:       'Rechercher des articles…',
       loading:      'Chargement des articles…',
       error:        'Échec du chargement. Veuillez réessayer plus tard.',
       empty:        'Aucun article publié pour l\'instant – revenez bientôt !',
@@ -165,7 +166,7 @@
     es: {
       backLink:     '← Volver al test',
       heroSub:      'Artículos sobre psicología de la personalidad, rasgos y tests adaptativos',
-      filterAll:    'Todos',
+      search:       'Buscar artículos…',
       loading:      'Cargando artículos…',
       error:        'Error al cargar. Por favor, inténtalo más tarde.',
       empty:        'Aún no hay artículos publicados – ¡vuelve pronto!',
@@ -201,7 +202,7 @@
     document.getElementById('back-link').textContent = t.backLink;
     document.getElementById('back-link').href = t.testHome;
     document.getElementById('hero-sub').textContent = t.heroSub;
-    document.getElementById('filter-all').textContent = t.filterAll;
+    document.getElementById('blog-search').placeholder = t.search;
     document.getElementById('blog-loading').textContent = t.loading;
     document.getElementById('blog-error').textContent = t.error;
     document.getElementById('blog-empty').textContent = t.empty;
@@ -232,18 +233,25 @@
   }
 
   // ── Render ────────────────────────────────────────────────────────
-  function renderPosts(tag) {
-    activeTag = tag;
+  function renderPosts(query) {
     const grid  = document.getElementById('posts-grid');
     const empty = document.getElementById('blog-empty');
-    // Client-side lang filter (works even before server-side filter is deployed)
+    const q = (query || '').toLowerCase().trim();
     const langPosts = allPosts.filter(p => (p.lang || 'de') === lang);
-    const filtered = tag === 'all' ? langPosts : langPosts.filter(p => p.tags && p.tags.includes(tag));
+    const newestId = langPosts.length ? langPosts.reduce((a, b) =>
+      new Date(b.published_at || b.created_at) > new Date(a.published_at || a.created_at) ? b : a
+    ).id : null;
+    const filtered = !q ? langPosts : langPosts.filter(p =>
+      (p.title || '').toLowerCase().includes(q) ||
+      (p.excerpt || '').toLowerCase().includes(q) ||
+      (p.content || '').toLowerCase().includes(q)
+    );
     if (!filtered.length) { grid.style.display='none'; empty.style.display=''; return; }
     empty.style.display = 'none';
     grid.style.display  = '';
     grid.innerHTML = filtered.map(p => `
       <a class="post-card" href="/blog/${lang}/${esc(p.slug||'')}" style="text-decoration:none;color:inherit;display:block">
+        ${p.id === newestId ? '<span class="new-badge">NEW</span>' : ''}
         <div class="post-meta">
           ${(p.tags||'').split(',').map(t=>t.trim()).filter(Boolean).map(t=>`<span class="post-tag">${esc(t)}</span>`).join('')}
           <span class="post-date">${fmtDate(p.published_at || p.created_at)}</span>
@@ -253,26 +261,7 @@
       </a>`).join('');
   }
 
-  function buildTagFilters() {
-    const tagSet = new Set();
-    allPosts.forEach(p => { (p.tags||'').split(',').forEach(t => { const s=t.trim(); if(s) tagSet.add(s); }); });
-    const container = document.getElementById('filters');
-    // Remove old dynamic buttons
-    container.querySelectorAll('.filter-btn:not([data-tag="all"])').forEach(b => b.remove());
-    tagSet.forEach(tag => {
-      const btn = document.createElement('button');
-      btn.className = 'filter-btn'; btn.dataset.tag = tag; btn.textContent = tag;
-      btn.addEventListener('click', () => {
-        container.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active'); renderPosts(tag);
-      });
-      container.appendChild(btn);
-    });
-    document.getElementById('filter-all').addEventListener('click', function() {
-      container.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-      this.classList.add('active'); renderPosts('all');
-    });
-  }
+
 
   // ── Post overlay ──────────────────────────────────────────────────
   window.openPost = function(id) {
@@ -304,8 +293,7 @@
       allPosts = await res.json();
       document.getElementById('blog-loading').style.display = 'none';
       if (!allPosts.length) { document.getElementById('blog-empty').style.display=''; return; }
-      buildTagFilters();
-      renderPosts('all');
+      renderPosts('');
     } catch(e) {
       document.getElementById('blog-loading').style.display = 'none';
       document.getElementById('blog-error').style.display = '';
@@ -313,6 +301,10 @@
   }
 
   // ── Init ──────────────────────────────────────────────────────────
+  document.getElementById('blog-search').addEventListener('input', function() {
+    renderPosts(this.value);
+  });
+
   applyTranslations();
   loadPosts();
 })();
