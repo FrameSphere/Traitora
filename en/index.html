@@ -299,7 +299,7 @@
                 <span class="nav-title">About Traitora</span>
                 <span class="nav-desc">Who built Traitora &amp; how was it developed?</span>
             </a>
-            <a href="/blog" class="quick-nav-card">
+            <a href="/blog" class="quick-nav-card" id="blog-nav-card" style="position:relative;overflow:visible">
                 <span class="nav-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
                 <span class="nav-title">Blog</span>
                 <span class="nav-desc">Articles on personality psychology, traits and adaptive testing</span>
@@ -366,5 +366,32 @@
     <script src="../js/adaptive-engine.js"></script>
     <script>window.DEFAULT_LANG = 'en';</script>
     <script src="../js/main.js"></script>
+    <script>
+    (function(){
+      var API='https://webcontrol-hq-api.karol-paschek.workers.dev';
+      var LS_KEY='traitora_blog_last_seen';
+      fetch(API+'/api/blog/published?site_id=traitora')
+        .then(function(r){return r.json();})
+        .then(function(posts){
+          if(!posts||!posts.length)return;
+          var newest=posts.reduce(function(a,b){
+            return (a.published_at||a.created_at)>(b.published_at||b.created_at)?a:b;
+          });
+          var newestTs=newest.published_at||newest.created_at||'';
+          var lastSeen=localStorage.getItem(LS_KEY)||'0';
+          if(newestTs>lastSeen){
+            var btn=document.getElementById('blog-nav-card');
+            if(!btn)return;
+            var badge=document.createElement('span');
+            badge.style.cssText='position:absolute;top:-7px;right:-7px;background:#ef4444;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 1px 4px rgba(0,0,0,.35);z-index:1;';
+            badge.textContent='1';
+            btn.appendChild(badge);
+            btn.addEventListener('click',function(){
+              localStorage.setItem(LS_KEY,newestTs);
+            });
+          }
+        }).catch(function(){});
+    })();
+    </script>
 </body>
 </html>
